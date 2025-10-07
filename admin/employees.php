@@ -1,3 +1,9 @@
+<?php
+require_once('Employee.php');
+$employeeObj = new Employee();
+$employees = $employeeObj->getEmployeeByRole(3);
+
+?>
 <?php require_once('layouts/master.php') ?>
 <?php require_once('layouts/sidebar.php') ?>
         <!-- Employees Section  -->
@@ -23,61 +29,35 @@
             </div>
             <div class="employee-grid" id="employeeGrid">
                     <!-- Employee cards will be populated by JavaScript  -->
-                <div class="employee-card" data-department="it">
-                    <div class="employee-header">
-                    <div class="employee-avatar">MC</div>
-                    <div class="employee-info">
-                        <h4>Michael Chen</h4>
-                        <p>Software Developer</p>
+                <?php foreach ($employees as $employee): ?>
+                    <div class="employee-card" data-department="it">
+                        <div class="employee-header">
+                        <div class="employee-avatar">MC</div>
+                        <div class="employee-info">
+                            <h4><?php echo $employee['name'] ?></h4>
+                            <p>Software Developer</p>
+                        </div>
+                        </div>
+                        <div class="employee-details">
+                        <div class="employee-detail">
+                            <span>Department:</span>
+                            <span>Information Technology</span>
+                        </div>
+                        <div class="employee-detail">
+                            <span>Email:</span>
+                            <span><?php echo $employee['email'] ?></span>
+                        </div>
+                        <div class="employee-detail">
+                            <span>Salary:</span>
+                            <span>$<?php echo $employee['basic_salary'] ?></span>
+                        </div>
+                        <div class="employee-detail">
+                            <span>Start Date:</span>
+                            <span>Aug 20, 2022</span>
+                        </div>
+                        </div>
                     </div>
-                    </div>
-                    <div class="employee-details">
-                    <div class="employee-detail">
-                        <span>Department:</span>
-                        <span>Information Technology</span>
-                    </div>
-                    <div class="employee-detail">
-                        <span>Email:</span>
-                        <span>michael.chen@company.com</span>
-                    </div>
-                    <div class="employee-detail">
-                        <span>Salary:</span>
-                        <span>$85,000</span>
-                    </div>
-                    <div class="employee-detail">
-                        <span>Start Date:</span>
-                        <span>Aug 20, 2022</span>
-                    </div>
-                    </div>
-                </div>
-
-                <div class="employee-card" data-department="hr">
-                    <div class="employee-header">
-                    <div class="employee-avatar">ED</div>
-                    <div class="employee-info">
-                        <h4>Emily Davis</h4>
-                        <p>HR Specialist</p>
-                    </div>
-                    </div>
-                    <div class="employee-details">
-                    <div class="employee-detail">
-                        <span>Department:</span>
-                        <span>Human Resources</span>
-                    </div>
-                    <div class="employee-detail">
-                        <span>Email:</span>
-                        <span>emily.davis@company.com</span>
-                    </div>
-                    <div class="employee-detail">
-                        <span>Salary:</span>
-                        <span>$65,000</span>
-                    </div>
-                    <div class="employee-detail">
-                        <span>Start Date:</span>
-                        <span>Mar 10, 2023</span>
-                    </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
                 <!-- Added pagination section at bottom of employee section -->
             <div class="pagination-container" id="paginationContainer">
