@@ -1,0 +1,2453 @@
+<!-- Roles Section -->
+<section id="roles-section" class="content-section">
+    <div class="section-header">
+        <h2>Role Management</h2>
+        <button class="btn btn-primary" id="addRoleBtn">
+            <span>➕</span>
+            Add Role
+        </button>
+    </div>
+    <div class="roles-grid">
+        <div class="role-card">
+            <div class="role-header">
+                <span class="role-icon">👑</span>
+                <h3>Super Admin</h3>
+            </div>
+            <p>Full system access and management capabilities</p>
+            <div class="role-permissions">
+                <span class="permission-tag">All Permissions</span>
+            </div>
+        </div>
+        <div class="role-card">
+            <div class="role-header">
+                <span class="role-icon">🧑‍💼</span>
+                <h3>HR</h3>
+            </div>
+            <p>HR and employee management, and team leader role assignment</p>
+            <div class="role-permissions">
+                <span class="permission-tag">HR and employee management</span>
+                <span class="permission-tag">leader role assignment</span>
+            </div>
+        </div>
+        <div class="role-card">
+            <div class="role-header">
+                <span class="role-icon">👨‍💼</span>
+                <h3>Team Leader</h3>
+            </div>
+            <p>Team management and reporting access</p>
+            <div class="role-permissions">
+                <span class="permission-tag">Team Management</span>
+                <span class="permission-tag">Reports</span>
+            </div>
+        </div>
+        <div class="role-card">
+            <div class="role-header">
+                <span class="role-icon">👤</span>
+                <h3>Employee</h3>
+            </div>
+            <p>Basic access to personal information and tasks</p>
+            <div class="role-permissions">
+                <span class="permission-tag">Profile</span>
+                <span class="permission-tag">Tasks</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Departments Section -->
+<section id="departments-section" class="content-section">
+    <div class="section-header">
+        <h2>Department Management</h2>
+        <button class="btn btn-primary" id="addDepartmentBtn">
+            <span>➕</span>
+            Add Department
+        </button>
+    </div>
+    <div class="departments-grid">
+        <div class="department-card">
+            <div class="department-icon">💻</div>
+            <h3>Information Technology</h3>
+            <p>15 employees</p>
+            <div class="department-stats">
+                <span>Budget: $250,000</span>
+                <span>Head: John Smith</span>
+            </div>
+        </div>
+        <div class="department-card">
+            <div class="department-icon">👥</div>
+            <h3>Human Resources</h3>
+            <p>8 employees</p>
+            <div class="department-stats">
+                <span>Budget: $180,000</span>
+                <span>Head: Sarah Wilson</span>
+            </div>
+        </div>
+        <div class="department-card">
+            <div class="department-icon">📊</div>
+            <h3>Marketing</h3>
+            <p>12 employees</p>
+            <div class="department-stats">
+                <span>Budget: $200,000</span>
+                <span>Head: Mike Johnson</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Assets Section -->
+<section id="assets-section" class="content-section">
+    <div class="section-header">
+        <h2>Asset Management</h2>
+        <button class="btn btn-primary" id="addAssetBtn">
+            <span>➕</span>
+            Add Asset
+        </button>
+    </div>
+    <div class="assets-table">
+        <div class="table-header">
+            <span>Asset Name</span>
+            <span>Type</span>
+            <span>Assigned To</span>
+            <span>Status</span>
+            <span>Purchase Date</span>
+        </div>
+        <div class="table-row">
+            <span>MacBook Pro 16"</span>
+            <span>Laptop</span>
+            <span>John Doe</span>
+            <span class="status active">Active</span>
+            <span>2023-01-15</span>
+        </div>
+        <div class="table-row">
+            <span>Dell Monitor 27"</span>
+            <span>Monitor</span>
+            <span>Sarah Johnson</span>
+            <span class="status active">Active</span>
+            <span>2023-02-20</span>
+        </div>
+    </div>
+</section>
+
+<!-- Holidays Section -->
+<section id="holidays-section" class="content-section">
+    <div class="section-header">
+        <h2>Holiday Management</h2>
+        <button class="btn btn-primary" id="addHolidayBtn">
+            <span>➕</span>
+            Add Holiday
+        </button>
+    </div>
+    <div class="holidays-calendar">
+        <div class="holiday-item">
+            <div class="holiday-date">
+                <span class="month">Jan</span>
+                <span class="day">01</span>
+            </div>
+            <div class="holiday-info">
+                <h3>New Year's Day</h3>
+                <p>Public Holiday</p>
+            </div>
+        </div>
+        <div class="holiday-item">
+            <div class="holiday-date">
+                <span class="month">Jul</span>
+                <span class="day">04</span>
+            </div>
+            <div class="holiday-info">
+                <h3>Independence Day</h3>
+                <p>Public Holiday</p>
+            </div>
+        </div>
+        <div class="holiday-item">
+            <div class="holiday-date">
+                <span class="month">Dec</span>
+                <span class="day">25</span>
+            </div>
+            <div class="holiday-info">
+                <h3>Christmas Day</h3>
+                <p>Public Holiday</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leaves Section -->
+<section id="leaves-section" class="content-section">
+    <div class="section-header">
+        <h2>Leave Management</h2>
+    </div>
+    <div class="leave-requests">
+        <div class="leave-card">
+            <div class="leave-header">
+                <div class="employee-info">
+                    <span class="employee-name">John Doe</span>
+                    <span class="leave-type">Annual Leave</span>
+                </div>
+                <span class="leave-status pending">Pending</span>
+            </div>
+            <div class="leave-details">
+                <span>From: March 15, 2024</span>
+                <span>To: March 20, 2024</span>
+                <span>Duration: 5 days</span>
+            </div>
+                <!-- Added approve and reject buttons for leave management  -->
+            <div class="leave-actions">
+                <button class="btn btn-approve" onclick="approveLeave(this, 'approved')">
+                    <span>✓</span> Approve
+                </button>
+                <button class="btn btn-reject" onclick="approveLeave(this, 'rejected')">
+                    <span>✗</span> Reject
+                </button>
+            </div>
+        </div>
+        <div class="leave-card">
+            <div class="leave-header">
+                <div class="employee-info">
+                    <span class="employee-name">Sarah Johnson</span>
+                    <span class="leave-type">Sick Leave</span>
+                </div>
+                <span class="leave-status approved">Approved</span>
+            </div>
+            <div class="leave-details">
+                <span>From: March 10, 2024</span>
+                <span>To: March 12, 2024</span>
+                <span>Duration: 2 days</span>
+            </div>
+                <!-- Added approve and reject buttons for leave management  -->
+            <div class="leave-actions">
+                <button class="btn btn-approve" onclick="approveLeave(this, 'approved')">
+                    <span>✓</span> Approve
+                </button>
+                <button class="btn btn-reject" onclick="approveLeave(this, 'rejected')">
+                    <span>✗</span> Reject
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- New Filter Bar -->
+    <div class="leave-filters">
+        <select id="leaveMonthFilter" class="filter-select">
+        <option value="">All Months</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+        </select>
+
+        <input type="number" id="leaveDayFilter" class="filter-select" placeholder="Day (1-31)" min="1" max="31">
+        <input type="number" id="leaveYearFilter" class="filter-select" placeholder="Year" min="2000" max="2100">
+
+        <select id="leaveDepartmentFilter" class="filter-select">
+        <option value="">All Departments</option>
+        <option value="hr">Human Resources</option>
+        <option value="it">Information Technology</option>
+        <option value="finance">Finance</option>
+        <option value="marketing">Marketing</option>
+        <option value="sales">Sales</option>
+        </select>
+
+        <button id="filterLeaveBtn" class="btn btn-primary">Filter</button>
+    </div>
+
+    <!-- Leave History Table -->
+    <div class="leave-history">
+        <h3>Leave History</h3>
+        <div class="leave-table">
+        <div class="table-header">
+            <span>Employee</span>
+            <span>Department</span>
+            <span>Type</span>
+            <span>From</span>
+            <span>To</span>
+            <span>Status</span>
+        </div>
+        <div id="leaveHistoryBody" class="table-body">
+            <!-- Populated via JS -->
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certification Section -->
+<section id="certification-section" class="content-section">
+    <div class="section-header">
+        <h2>Certification Management</h2>
+    </div>
+    <div class="certifications-grid">
+        <div class="certification-card">
+            <div class="cert-icon">🏆</div>
+            <h3>AWS Solutions Architect</h3>
+            <p>John Smith - IT Department</p>
+            <div class="cert-details">
+                <span>Issued: Jan 2024</span>
+                <span>Expires: Jan 2027</span>
+            </div>
+                <!-- Changed status from valid to pending and added approve button  -->
+            <span class="cert-status pending">Pending</span>
+            <div class="cert-actions">
+                <button class="btn btn-approve-cert" onclick="approveCertification(this)">
+                    <span>✓</span> Approve
+                </button>
+            </div>
+        </div>
+        <div class="certification-card">
+            <div class="cert-icon">📜</div>
+            <h3>Project Management Professional</h3>
+            <p>Sarah Wilson - HR Department</p>
+            <div class="cert-details">
+                <span>Issued: Dec 2023</span>
+                <span>Expires: Dec 2026</span>
+            </div>
+                <!-- Changed status from valid to pending and added approve button  -->
+            <span class="cert-status pending">Pending</span>
+            <div class="cert-actions">
+                <button class="btn btn-approve-cert" onclick="approveCertification(this)">
+                    <span>✓</span> Approve
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills-section" class="content-section">
+    <div class="section-header">
+        <h2>Skills Management</h2>
+        <button class="btn btn-primary" id="addSkillBtn">
+            <span>➕</span>
+            Add Skill
+        </button>
+    </div>
+    <div class="skills-overview">
+        <div class="skill-category">
+            <h3>Technical Skills</h3>
+            <div class="skills-list">
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">AWS</span>
+            </div>
+        </div>
+        <div class="skill-category">
+            <h3>Soft Skills</h3>
+            <div class="skills-list">
+                <span class="skill-tag">Leadership</span>
+                <span class="skill-tag">Communication</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Team Work</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Attendance Section -->
+<section id="attendance-section" class="content-section">
+    <div class="section-header">
+        <h2>Attendance Management</h2>
+        <div class="header-actions">
+            <button class="btn btn-secondary" id="exportAttendanceBtn">
+                <span>📊</span>
+                Export Report
+            </button>
+            <button class="btn btn-primary" id="markAttendanceBtn">
+                <span>✅</span>
+                Mark Attendance
+            </button>
+        </div>
+    </div>
+    
+    <!-- CHANGE --> Enhanced attendance navigation tabs 
+    <div class="attendance-tabs">
+        <button class="tab-btn active" data-tab="overview">Overview</button>
+        <button class="tab-btn" data-tab="analytics">Analytics & Reports</button>
+        <button class="tab-btn" data-tab="trends">Weekly Trends</button>
+        <button class="tab-btn" data-tab="departments">Department Overview</button>
+        <button class="tab-btn" data-tab="calendar">Calendar View</button>
+    </div>
+    
+        Overview Tab Content 
+    <div class="tab-content active" id="overview-tab">
+            Quick Stats 
+        <div class="attendance-stats">
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-content">
+                    <h3>Present Today</h3>
+                    <p class="stat-number" id="presentToday">142</p>
+                    <span class="stat-change">91% attendance</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🏠</div>
+                <div class="stat-content">
+                    <h3>Remote Workers</h3>
+                    <p class="stat-number" id="remoteToday">28</p>
+                    <span class="stat-change">18% of workforce</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏰</div>
+                <div class="stat-content">
+                    <h3>Late Arrivals</h3>
+                    <p class="stat-number" id="lateToday">5</p>
+                    <span class="stat-change negative">3% of present</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🚫</div>
+                <div class="stat-content">
+                    <h3>Absent Today</h3>
+                    <p class="stat-number" id="absentToday">14</p>
+                    <span class="stat-change">9% of workforce</span>
+                </div>
+            </div>
+        </div>
+        
+            Attendance Filters 
+        <div class="attendance-filters">
+            <input type="text" placeholder="Search employees..." class="search-input" id="attendanceSearch">
+            <select class="filter-select" id="attendanceStatusFilter">
+                <option value="">All Status</option>
+                <option value="present">Present</option>
+                <option value="absent">Absent</option>
+                <option value="late">Late</option>
+                <option value="remote">Remote</option>
+            </select>
+            <select class="filter-select" id="attendanceDepartmentFilter">
+                <option value="">All Departments</option>
+                <option value="hr">Human Resources</option>
+                <option value="it">Information Technology</option>
+                <option value="finance">Finance</option>
+                <option value="marketing">Marketing</option>
+                <option value="sales">Sales</option>
+                <option value="operations">Operations</option>
+            </select>
+            <input type="date" class="date-input" id="attendanceDate" value="">
+        </div>
+        
+            Attendance Table 
+        <div class="attendance-table-container">
+            <div class="attendance-table">
+                <div class="table-header">
+                    <span>Employee</span>
+                    <span>Department</span>
+                    <span>Check In</span>
+                    <span>Check Out</span>
+                    <span>Hours</span>
+                    <span>Status</span>
+                    <span>Actions</span>
+                </div>
+                <div class="table-body" id="attendanceTableBody">
+                        Attendance records will be populated by JavaScript 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- CHANGE --> New Analytics & Reports Tab 
+    <div class="tab-content" id="analytics-tab">
+        <div class="analytics-overview">
+            <div class="analytics-card">
+                <div class="analytics-header">
+                    <h3>📈 Attendance Analytics</h3>
+                    <select class="period-select">
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="quarter">This Quarter</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+                <div class="analytics-metrics">
+                    <div class="metric-item">
+                        <span class="metric-label">Average Attendance</span>
+                        <span class="metric-value">89.2%</span>
+                        <span class="metric-trend positive">+2.1%</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">On-Time Rate</span>
+                        <span class="metric-value">94.7%</span>
+                        <span class="metric-trend positive">+1.3%</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-label">Remote Work Rate</span>
+                        <span class="metric-value">18.5%</span>
+                        <span class="metric-trend">-0.8%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="analytics-card">
+                <div class="analytics-header">
+                    <h3>📊 Attendance Distribution</h3>
+                </div>
+                <div class="chart-container" id="attendanceDistributionChart">
+                    <div class="chart-placeholder">
+                        <div class="chart-bars">
+                            <div class="chart-bar" style="height: 85%; background: #10b981;">
+                                <span class="bar-label">Present<br>85%</span>
+                            </div>
+                            <div class="chart-bar" style="height: 12%; background: #f59e0b;">
+                                <span class="bar-label">Remote<br>12%</span>
+                            </div>
+                            <div class="chart-bar" style="height: 8%; background: #ef4444;">
+                                <span class="bar-label">Absent<br>8%</span>
+                            </div>
+                            <div class="chart-bar" style="height: 5%; background: #8b5cf6;">
+                                <span class="bar-label">Late<br>5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="reports-section">
+            <h3>📋 Generate Reports</h3>
+            <div class="reports-grid">
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Daily Attendance Report</h3>
+                        <button class="report-generate-btn" data-report="daily">Generate</button>
+                    </div>
+                    <p>Comprehensive daily attendance summary with check-in/out times</p>
+                    <div class="report-meta">
+                        <span>Last generated: Today</span>
+                        <span class="report-status">91% attendance</span>
+                    </div>
+                </div>
+                
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Monthly Attendance Report</h3>
+                        <button class="report-generate-btn" data-report="monthly">Generate</button>
+                    </div>
+                    <p>Monthly attendance patterns, trends, and department comparisons</p>
+                    <div class="report-meta">
+                        <span>Last generated: Yesterday</span>
+                        <span class="report-status">March 2024</span>
+                    </div>
+                </div>
+                
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Attendance Analytics Report</h3>
+                        <button class="report-generate-btn" data-report="analytics">Generate</button>
+                    </div>
+                    <p>Advanced analytics with insights and recommendations</p>
+                    <div class="report-meta">
+                        <span>Last generated: 2 days ago</span>
+                        <span class="report-status">Insights available</span>
+                    </div>
+                </div>
+                
+                <div class="report-card">
+                    <div class="report-header">
+                        <h3>Department Comparison</h3>
+                        <button class="report-generate-btn" data-report="department">Generate</button>
+                    </div>
+                    <p>Cross-department attendance analysis and benchmarking</p>
+                    <div class="report-meta">
+                        <span>Last generated: 3 days ago</span>
+                        <span class="report-status">6 departments</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- CHANGE --> New Weekly Trends Tab 
+    <div class="tab-content" id="trends-tab">
+        <div class="trends-overview">
+            <div class="trend-card">
+                <div class="trend-header">
+                    <h3>📅 Weekly Attendance Trend</h3>
+                    <div class="trend-controls">
+                        <button class="trend-nav" id="prevWeek">‹</button>
+                        <span class="current-week">March 18-24, 2024</span>
+                        <button class="trend-nav" id="nextWeek">›</button>
+                    </div>
+                </div>
+                <div class="weekly-chart-container">
+                    <div class="weekly-chart">
+                        <div class="chart-days">
+                            <div class="day-column">
+                                <div class="day-label">Mon</div>
+                                <div class="day-bar" style="height: 92%;">
+                                    <span class="day-value">92%</span>
+                                </div>
+                                <div class="day-count">147/160</div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-label">Tue</div>
+                                <div class="day-bar" style="height: 89%;">
+                                    <span class="day-value">89%</span>
+                                </div>
+                                <div class="day-count">142/160</div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-label">Wed</div>
+                                <div class="day-bar" style="height: 94%;">
+                                    <span class="day-value">94%</span>
+                                </div>
+                                <div class="day-count">150/160</div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-label">Thu</div>
+                                <div class="day-bar" style="height: 87%;">
+                                    <span class="day-value">87%</span>
+                                </div>
+                                <div class="day-count">139/160</div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-label">Fri</div>
+                                <div class="day-bar" style="height: 85%;">
+                                    <span class="day-value">85%</span>
+                                </div>
+                                <div class="day-count">136/160</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="weekly-insights">
+                    <div class="insight-item">
+                        <span class="insight-icon">📈</span>
+                        <span class="insight-text">Wednesday shows highest attendance (94%)</span>
+                    </div>
+                    <div class="insight-item">
+                        <span class="insight-icon">📉</span>
+                        <span class="insight-text">Friday attendance typically drops by 7%</span>
+                    </div>
+                    <div class="insight-item">
+                        <span class="insight-icon">⭐</span>
+                        <span class="insight-text">Weekly average: 89.4% (+2.1% vs last week)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trend-card">
+                <div class="trend-header">
+                    <h3>🕐 Peak Hours Analysis</h3>
+                </div>
+                <div class="peak-hours-chart">
+                    <div class="hour-bars">
+                        <div class="hour-bar" style="height: 20%;">
+                            <span class="hour-label">8AM</span>
+                            <span class="hour-value">20%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 85%;">
+                            <span class="hour-label">9AM</span>
+                            <span class="hour-value">85%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 95%;">
+                            <span class="hour-label">10AM</span>
+                            <span class="hour-value">95%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 92%;">
+                            <span class="hour-label">11AM</span>
+                            <span class="hour-value">92%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 75%;">
+                            <span class="hour-label">12PM</span>
+                            <span class="hour-value">75%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 88%;">
+                            <span class="hour-label">1PM</span>
+                            <span class="hour-value">88%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 90%;">
+                            <span class="hour-label">2PM</span>
+                            <span class="hour-value">90%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 87%;">
+                            <span class="hour-label">3PM</span>
+                            <span class="hour-value">87%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 82%;">
+                            <span class="hour-label">4PM</span>
+                            <span class="hour-value">82%</span>
+                        </div>
+                        <div class="hour-bar" style="height: 78%;">
+                            <span class="hour-label">5PM</span>
+                            <span class="hour-value">78%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="peak-insights">
+                    <p><strong>Peak Hours:</strong> 10AM - 11AM (95% presence)</p>
+                    <p><strong>Low Hours:</strong> 8AM - 9AM (20% early arrivals)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- CHANGE --> New Department Overview Tab 
+    <div class="tab-content" id="departments-tab">
+        <div class="department-overview">
+            <div class="department-stats">
+                <div class="dept-stat-card best">
+                    <div class="dept-icon">🏆</div>
+                    <div class="dept-content">
+                        <h4>Best Performing</h4>
+                        <p class="dept-name">Information Technology</p>
+                        <p class="dept-rate">96.2% attendance</p>
+                    </div>
+                </div>
+                <div class="dept-stat-card needs-attention">
+                    <div class="dept-icon">⚠️</div>
+                    <div class="dept-content">
+                        <h4>Needs Attention</h4>
+                        <p class="dept-name">Sales</p>
+                        <p class="dept-rate">82.1% attendance</p>
+                    </div>
+                </div>
+                <div class="dept-stat-card average">
+                    <div class="dept-icon">📊</div>
+                    <div class="dept-content">
+                        <h4>Company Average</h4>
+                        <p class="dept-name">All Departments</p>
+                        <p class="dept-rate">89.4% attendance</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="department-comparison">
+                <h3>📈 Department Attendance Comparison</h3>
+                <div class="dept-comparison-chart">
+                    <div class="dept-row">
+                        <span class="dept-label">Information Technology</span>
+                        <div class="dept-bar-container">
+                            <div class="dept-bar" style="width: 96.2%; background: #10b981;"></div>
+                            <span class="dept-percentage">96.2%</span>
+                        </div>
+                    </div>
+                    <div class="dept-row">
+                        <span class="dept-label">Finance</span>
+                        <div class="dept-bar-container">
+                            <div class="dept-bar" style="width: 93.8%; background: #10b981;"></div>
+                            <span class="dept-percentage">93.8%</span>
+                        </div>
+                    </div>
+                    <div class="dept-row">
+                        <span class="dept-label">Human Resources</span>
+                        <div class="dept-bar-container">
+                            <div class="dept-bar" style="width: 91.5%; background: #10b981;"></div>
+                            <span class="dept-percentage">91.5%</span>
+                        </div>
+                    </div>
+                    <div class="dept-row">
+                        <span class="dept-label">Operations</span>
+                        <div class="dept-bar-container">
+                            <div class="dept-bar" style="width: 88.7%; background: #f59e0b;"></div>
+                            <span class="dept-percentage">88.7%</span>
+                        </div>
+                    </div>
+                    <div class="dept-row">
+                        <span class="dept-label">Marketing</span>
+                        <div class="dept-bar-container">
+                            <div class="dept-bar" style="width: 85.3%; background: #f59e0b;"></div>
+                            <span class="dept-percentage">85.3%</span>
+                        </div>
+                    </div>
+                    <div class="dept-row">
+                        <span class="dept-label">Sales</span>
+                        <div class="dept-bar-container">
+                            <div class="dept-bar" style="width: 82.1%; background: #ef4444;"></div>
+                            <span class="dept-percentage">82.1%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="department-details">
+                <h3>🏢 Department Details</h3>
+                <div class="dept-details-grid">
+                    <div class="dept-detail-card">
+                        <div class="dept-detail-header">
+                            <h4>Information Technology</h4>
+                            <span class="dept-trend positive">+2.3%</span>
+                        </div>
+                        <div class="dept-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Total Employees</span>
+                                <span class="metric-value">28</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Present Today</span>
+                                <span class="metric-value">27</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Remote Workers</span>
+                                <span class="metric-value">8</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Late Arrivals</span>
+                                <span class="metric-value">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dept-detail-card">
+                        <div class="dept-detail-header">
+                            <h4>Sales</h4>
+                            <span class="dept-trend negative">-1.8%</span>
+                        </div>
+                        <div class="dept-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Total Employees</span>
+                                <span class="metric-value">35</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Present Today</span>
+                                <span class="metric-value">29</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Remote Workers</span>
+                                <span class="metric-value">12</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Late Arrivals</span>
+                                <span class="metric-value">3</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dept-detail-card">
+                        <div class="dept-detail-header">
+                            <h4>Marketing</h4>
+                            <span class="dept-trend">+0.5%</span>
+                        </div>
+                        <div class="dept-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Total Employees</span>
+                                <span class="metric-value">22</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Present Today</span>
+                                <span class="metric-value">19</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Remote Workers</span>
+                                <span class="metric-value">5</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Late Arrivals</span>
+                                <span class="metric-value">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Calendar View Tab (existing content) 
+    <div class="tab-content" id="calendar-tab">
+        <div class="attendance-calendar" id="attendanceCalendar">
+            <div class="calendar-header">
+                <button class="calendar-nav" id="prevMonth">‹</button>
+                <h3 id="calendarMonth">March 2024</h3>
+                <button class="calendar-nav" id="nextMonth">›</button>
+            </div>
+            <div class="calendar-grid" id="calendarGrid">
+                    Calendar will be populated by JavaScript 
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="payroll-section" class="content-section">
+    <div class="section-header">
+        <h2>Payroll Management</h2>
+        <div class="header-actions">
+            <button class="btn btn-secondary" id="exportPayrollBtn">
+                <span>📊</span>
+                Export Report
+            </button>
+            <button class="btn btn-primary" id="processPayrollBtn">
+                <span>💰</span>
+                Process Payroll
+            </button>
+        </div>
+    </div>
+    
+        <!-- CHANGE --> Added comprehensive payroll tabs navigation 
+    <div class="payroll-tabs">
+        <button class="tab-btn active" data-tab="overview">
+            <span>📊</span>
+            Overview
+        </button>
+        <button class="tab-btn" data-tab="employee-payroll">
+            <span>👤</span>
+            Employee Payroll
+        </button>
+        <button class="tab-btn" data-tab="department-payroll">
+            <span>🏢</span>
+            Department Payroll
+        </button>
+        <button class="tab-btn" data-tab="building-reports">
+            <span>🏗️</span>
+            Building Reports
+        </button>
+    </div>
+
+        Overview Tab (existing content) 
+    <div class="tab-content active" id="overview-tab">
+            Payroll Stats 
+        <div class="payroll-stats">
+            <div class="stat-card">
+                <div class="stat-icon">💰</div>
+                <div class="stat-content">
+                    <h3>Total Payroll</h3>
+                    <p class="stat-number">$485,600</p>
+                    <span class="stat-change">This month</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-content">
+                    <h3>Employees Paid</h3>
+                    <p class="stat-number">142</p>
+                    <span class="stat-change">91% processed</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏰</div>
+                <div class="stat-content">
+                    <h3>Pending Payroll</h3>
+                    <p class="stat-number">14</p>
+                    <span class="stat-change negative">9% remaining</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📋</div>
+                <div class="stat-content">
+                    <h3>Avg Salary</h3>
+                    <p class="stat-number">$3,420</p>
+                    <span class="stat-change positive">+5% from last month</span>
+                </div>
+            </div>
+        </div>
+        
+            <!-- Payroll Filters  -->
+        <div class="payroll-filters">
+            <input type="text" placeholder="Search employees..." class="search-input" id="payrollSearch">
+            <select class="filter-select" id="payrollDepartmentFilter">
+                <option value="">All Departments</option>
+                <option value="hr">Human Resources</option>
+                <option value="it">Information Technology</option>
+                <option value="finance">Finance</option>
+                <option value="marketing">Marketing</option>
+                <option value="sales">Sales</option>
+                <option value="operations">Operations</option>
+            </select>
+            <select class="filter-select" id="payrollStatusFilter">
+                <option value="">All Status</option>
+                <option value="processed">Processed</option>
+                <option value="pending">Pending</option>
+                <option value="hold">On Hold</option>
+            </select>
+            <select class="filter-select" id="payrollMonthFilter">
+                <option value="">Select Month</option>
+                <option value="2024-03">March 2024</option>
+                <option value="2024-02">February 2024</option>
+                <option value="2024-01">January 2024</option>
+            </select>
+        </div>
+        
+            Payroll Table 
+        <div class="payroll-table-container">
+            <div class="payroll-table">
+                <div class="table-header">
+                    <span>Employee</span>
+                    <span>Department</span>
+                    <span>Basic Salary</span>
+                    <span>Allowances</span>
+                    <span>Deductions</span>
+                    <span>Net Salary</span>
+                    <span>Status</span>
+                    <span>Actions</span>
+                </div>
+                <div class="table-body" id="payrollTableBody">
+                        Payroll records will be populated by JavaScript 
+                </div>
+            </div>
+        </div>
+        
+            Payroll Summary 
+        <div class="payroll-summary">
+            <div class="summary-card">
+                <h3>Payroll Summary</h3>
+                <div class="summary-item">
+                    <span>Total Basic Salary:</span>
+                    <span class="amount">$420,000</span>
+                </div>
+                <div class="summary-item">
+                    <span>Total Allowances:</span>
+                    <span class="amount positive">+$85,600</span>
+                </div>
+                <div class="summary-item">
+                    <span>Total Deductions:</span>
+                    <span class="amount negative">-$20,000</span>
+                </div>
+                <div class="summary-item total">
+                    <span>Net Payroll:</span>
+                    <span class="amount">$485,600</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- CHANGE --> Added Employee Payroll Tab 
+    <div class="tab-content" id="employee-payroll-tab">
+        <div class="employee-payroll-header">
+            <h3>Individual Employee Payroll</h3>
+            <div class="payroll-actions">
+                <button class="btn btn-secondary" id="bulkPayrollBtn">
+                    <span>📋</span>
+                    Bulk Process
+                </button>
+                <button class="btn btn-primary" id="generatePayslipBtn">
+                    <span>📄</span>
+                    Generate Payslip
+                </button>
+            </div>
+        </div>
+
+        <div class="employee-payroll-filters">
+            <input type="text" placeholder="Search employee..." class="search-input" id="employeePayrollSearch">
+            <select class="filter-select" id="employeePayrollDept">
+                <option value="">All Departments</option>
+                <option value="hr">Human Resources</option>
+                <option value="it">Information Technology</option>
+                <option value="finance">Finance</option>
+                <option value="marketing">Marketing</option>
+                <option value="sales">Sales</option>
+                <option value="operations">Operations</option>
+            </select>
+            <select class="filter-select" id="employeePayrollPeriod">
+                <option value="current">Current Month</option>
+                <option value="2024-03">March 2024</option>
+                <option value="2024-02">February 2024</option>
+                <option value="2024-01">January 2024</option>
+            </select>
+        </div>
+
+        <div class="employee-payroll-grid" id="employeePayrollGrid">
+                Employee payroll cards will be populated by JavaScript 
+        </div>
+
+        <div class="employee-payroll-analytics">
+            <div class="analytics-card">
+                <h4>Salary Distribution</h4>
+                <canvas id="salaryDistributionChart" width="400" height="200"></canvas>
+            </div>
+            <div class="analytics-card">
+                <h4>Payroll Trends</h4>
+                <canvas id="payrollTrendsChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+
+        <!-- CHANGE --> Added Department Payroll Tab 
+    <div class="tab-content" id="department-payroll-tab">
+        <div class="department-payroll-header">
+            <h3>Department-wise Payroll Analysis</h3>
+            <div class="payroll-actions">
+                <button class="btn btn-secondary" id="compareDeptBtn">
+                    <span>📊</span>
+                    Compare Departments
+                </button>
+                <button class="btn btn-primary" id="exportDeptPayrollBtn">
+                    <span>📤</span>
+                    Export Report
+                </button>
+            </div>
+        </div>
+
+        <div class="department-payroll-stats">
+            <div class="dept-stat-card">
+                <div class="dept-icon">🏢</div>
+                <div class="dept-info">
+                    <h4>Total Departments</h4>
+                    <p class="dept-number">6</p>
+                    <span class="dept-change">Active departments</span>
+                </div>
+            </div>
+            <div class="dept-stat-card">
+                <div class="dept-icon">💰</div>
+                <div class="dept-info">
+                    <h4>Highest Payroll</h4>
+                    <p class="dept-number">$125,400</p>
+                    <span class="dept-change">IT Department</span>
+                </div>
+            </div>
+            <div class="dept-stat-card">
+                <div class="dept-icon">📈</div>
+                <div class="dept-info">
+                    <h4>Average per Dept</h4>
+                    <p class="dept-number">$80,933</p>
+                    <span class="dept-change">Monthly average</span>
+                </div>
+            </div>
+            <div class="dept-stat-card">
+                <div class="dept-icon">⚖️</div>
+                <div class="dept-info">
+                    <h4>Budget Variance</h4>
+                    <p class="dept-number">+2.3%</p>
+                    <span class="dept-change positive">Within budget</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="department-payroll-grid">
+            <div class="dept-payroll-card">
+                <div class="dept-card-header">
+                    <h4>Human Resources</h4>
+                    <span class="dept-badge hr">HR</span>
+                </div>
+                <div class="dept-payroll-details">
+                    <div class="dept-detail">
+                        <span>Employees:</span>
+                        <span>12</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Total Payroll:</span>
+                        <span class="amount">$78,400</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Average Salary:</span>
+                        <span>$6,533</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Budget Usage:</span>
+                        <span class="positive">92%</span>
+                    </div>
+                </div>
+                <div class="dept-chart-container">
+                    <canvas id="hrPayrollChart" width="300" height="150"></canvas>
+                </div>
+            </div>
+
+            <div class="dept-payroll-card">
+                <div class="dept-card-header">
+                    <h4>Information Technology</h4>
+                    <span class="dept-badge it">IT</span>
+                </div>
+                <div class="dept-payroll-details">
+                    <div class="dept-detail">
+                        <span>Employees:</span>
+                        <span>18</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Total Payroll:</span>
+                        <span class="amount">$125,400</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Average Salary:</span>
+                        <span>$6,967</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Budget Usage:</span>
+                        <span class="positive">88%</span>
+                    </div>
+                </div>
+                <div class="dept-chart-container">
+                    <canvas id="itPayrollChart" width="300" height="150"></canvas>
+                </div>
+            </div>
+
+            <div class="dept-payroll-card">
+                <div class="dept-card-header">
+                    <h4>Marketing</h4>
+                    <span class="dept-badge marketing">MKT</span>
+                </div>
+                <div class="dept-payroll-details">
+                    <div class="dept-detail">
+                        <span>Employees:</span>
+                        <span>15</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Total Payroll:</span>
+                        <span class="amount">$89,200</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Average Salary:</span>
+                        <span>$5,947</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Budget Usage:</span>
+                        <span class="warning">96%</span>
+                    </div>
+                </div>
+                <div class="dept-chart-container">
+                    <canvas id="marketingPayrollChart" width="300" height="150"></canvas>
+                </div>
+            </div>
+
+            <div class="dept-payroll-card">
+                <div class="dept-card-header">
+                    <h4>Sales</h4>
+                    <span class="dept-badge sales">SALES</span>
+                </div>
+                <div class="dept-payroll-details">
+                    <div class="dept-detail">
+                        <span>Employees:</span>
+                        <span>22</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Total Payroll:</span>
+                        <span class="amount">$98,600</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Average Salary:</span>
+                        <span>$4,482</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Budget Usage:</span>
+                        <span class="positive">85%</span>
+                    </div>
+                </div>
+                <div class="dept-chart-container">
+                    <canvas id="salesPayrollChart" width="300" height="150"></canvas>
+                </div>
+            </div>
+
+            <div class="dept-payroll-card">
+                <div class="dept-card-header">
+                    <h4>Finance</h4>
+                    <span class="dept-badge finance">FIN</span>
+                </div>
+                <div class="dept-payroll-details">
+                    <div class="dept-detail">
+                        <span>Employees:</span>
+                        <span>8</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Total Payroll:</span>
+                        <span class="amount">$64,800</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Average Salary:</span>
+                        <span>$8,100</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Budget Usage:</span>
+                        <span class="positive">90%</span>
+                    </div>
+                </div>
+                <div class="dept-chart-container">
+                    <canvas id="financePayrollChart" width="300" height="150"></canvas>
+                </div>
+            </div>
+
+            <div class="dept-payroll-card">
+                <div class="dept-card-header">
+                    <h4>Operations</h4>
+                    <span class="dept-badge operations">OPS</span>
+                </div>
+                <div class="dept-payroll-details">
+                    <div class="dept-detail">
+                        <span>Employees:</span>
+                        <span>25</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Total Payroll:</span>
+                        <span class="amount">$87,500</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Average Salary:</span>
+                        <span>$3,500</span>
+                    </div>
+                    <div class="dept-detail">
+                        <span>Budget Usage:</span>
+                        <span class="positive">82%</span>
+                    </div>
+                </div>
+                <div class="dept-chart-container">
+                    <canvas id="operationsPayrollChart" width="300" height="150"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="department-comparison">
+            <div class="comparison-header">
+                <h4>Department Comparison</h4>
+                <div class="comparison-controls">
+                    <select id="comparisonMetric">
+                        <option value="total">Total Payroll</option>
+                        <option value="average">Average Salary</option>
+                        <option value="budget">Budget Usage</option>
+                    </select>
+                </div>
+            </div>
+            <div class="comparison-chart">
+                <canvas id="departmentComparisonChart" width="800" height="300"></canvas>
+            </div>
+        </div>
+    </div>
+
+        <!-- CHANGE --> Added Building Reports Tab 
+    <div class="tab-content" id="building-reports-tab">
+        <div class="building-reports-header">
+            <h3>Organization-wide Payroll Reports</h3>
+            <div class="payroll-actions">
+                <button class="btn btn-secondary" id="scheduleReportBtn">
+                    <span>⏰</span>
+                    Schedule Report
+                </button>
+                <button class="btn btn-primary" id="generateBuildingReportBtn">
+                    <span>📊</span>
+                    Generate Report
+                </button>
+            </div>
+        </div>
+
+        <div class="building-overview-stats">
+            <div class="building-stat-card">
+                <div class="building-icon">🏗️</div>
+                <div class="building-info">
+                    <h4>Total Organization Payroll</h4>
+                    <p class="building-number">$485,600</p>
+                    <span class="building-change">Current month</span>
+                </div>
+            </div>
+            <div class="building-stat-card">
+                <div class="building-icon">👥</div>
+                <div class="building-info">
+                    <h4>Total Employees</h4>
+                    <p class="building-number">142</p>
+                    <span class="building-change">Across all departments</span>
+                </div>
+            </div>
+            <div class="building-stat-card">
+                <div class="building-icon">💼</div>
+                <div class="building-info">
+                    <h4>Payroll Growth</h4>
+                    <p class="building-number">+8.2%</p>
+                    <span class="building-change positive">Year over year</span>
+                </div>
+            </div>
+            <div class="building-stat-card">
+                <div class="building-icon">💰</div>
+                <div class="building-info">
+                    <h4>Annual Projection</h4>
+                    <p class="building-number">$5.8M</p>
+                    <span class="building-change">Based on current trends</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="building-reports-grid">
+            <div class="report-section">
+                <h4>Executive Summary</h4>
+                <div class="executive-summary">
+                    <div class="summary-metric">
+                        <span class="metric-label">Total Annual Cost:</span>
+                        <span class="metric-value">$5,827,200</span>
+                    </div>
+                    <div class="summary-metric">
+                        <span class="metric-label">Average Employee Cost:</span>
+                        <span class="metric-value">$41,050</span>
+                    </div>
+                    <div class="summary-metric">
+                        <span class="metric-label">Highest Department:</span>
+                        <span class="metric-value">IT ($125,400/month)</span>
+                    </div>
+                    <div class="summary-metric">
+                        <span class="metric-label">Budget Efficiency:</span>
+                        <span class="metric-value positive">89.2%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-section">
+                <h4>Payroll Breakdown</h4>
+                <div class="payroll-breakdown-chart">
+                    <canvas id="buildingPayrollBreakdownChart" width="400" height="300"></canvas>
+                </div>
+            </div>
+
+            <div class="report-section">
+                <h4>Historical Trends</h4>
+                <div class="historical-trends-chart">
+                    <canvas id="historicalTrendsChart" width="600" height="300"></canvas>
+                </div>
+            </div>
+
+            <div class="report-section">
+                <h4>Cost Analysis</h4>
+                <div class="cost-analysis">
+                    <div class="cost-item">
+                        <span class="cost-label">Base Salaries:</span>
+                        <span class="cost-value">$420,000 (86.5%)</span>
+                        <div class="cost-bar">
+                            <div class="cost-fill" style="width: 86.5%"></div>
+                        </div>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Benefits & Allowances:</span>
+                        <span class="cost-value">$45,600 (9.4%)</span>
+                        <div class="cost-bar">
+                            <div class="cost-fill" style="width: 9.4%"></div>
+                        </div>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Bonuses:</span>
+                        <span class="cost-value">$15,000 (3.1%)</span>
+                        <div class="cost-bar">
+                            <div class="cost-fill" style="width: 3.1%"></div>
+                        </div>
+                    </div>
+                    <div class="cost-item">
+                        <span class="cost-label">Overtime:</span>
+                        <span class="cost-value">$5,000 (1.0%)</span>
+                        <div class="cost-bar">
+                            <div class="cost-fill" style="width: 1.0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-section">
+                <h4>Compliance & Audit</h4>
+                <div class="compliance-status">
+                    <div class="compliance-item">
+                        <span class="compliance-icon">✅</span>
+                        <span class="compliance-text">Tax Compliance: Up to date</span>
+                    </div>
+                    <div class="compliance-item">
+                        <span class="compliance-icon">✅</span>
+                        <span class="compliance-text">Labor Law: Compliant</span>
+                    </div>
+                    <div class="compliance-item">
+                        <span class="compliance-icon">⚠️</span>
+                        <span class="compliance-text">Audit Review: Due in 30 days</span>
+                    </div>
+                    <div class="compliance-item">
+                        <span class="compliance-icon">✅</span>
+                        <span class="compliance-text">Benefits Administration: Current</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-section">
+                <h4>Recommendations</h4>
+                <div class="recommendations">
+                    <div class="recommendation-item">
+                        <span class="rec-priority high">High</span>
+                        <span class="rec-text">Review IT department salary structure for market competitiveness</span>
+                    </div>
+                    <div class="recommendation-item">
+                        <span class="rec-priority medium">Medium</span>
+                        <span class="rec-text">Implement performance-based bonus structure for Sales team</span>
+                    </div>
+                    <div class="recommendation-item">
+                        <span class="rec-priority low">Low</span>
+                        <span class="rec-text">Consider cost-of-living adjustments for next fiscal year</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="reports-section" class="content-section">
+        Replaced placeholder with comprehensive reports section 
+    <div class="section-header">
+        <h2>Reports & Analytics</h2>
+        <div class="header-actions">
+            <button class="btn btn-secondary" id="scheduleReportBtn">
+                <span>📅</span>
+                Schedule Report
+            </button>
+            <button class="btn btn-primary" id="generateReportBtn">
+                <span>📊</span>
+                Generate Report
+            </button>
+        </div>
+    </div>
+    
+        Report Categories 
+    <div class="report-categories">
+        <div class="category-card active" data-category="overview">
+            <div class="category-icon">📊</div>
+            <h3>Overview Reports</h3>
+            <p>General analytics and summaries</p>
+        </div>
+        <div class="category-card" data-category="employee">
+            <div class="category-icon">👥</div>
+            <h3>Employee Reports</h3>
+            <p>Staff performance and details</p>
+        </div>
+        <div class="category-card" data-category="attendance">
+            <div class="category-icon">📅</div>
+            <h3>Attendance Reports</h3>
+            <p>Time tracking and presence</p>
+        </div>
+        <div class="category-card" data-category="payroll">
+            <div class="category-icon">💰</div>
+            <h3>Payroll Reports</h3>
+            <p>Salary and compensation data</p>
+        </div>
+    </div>
+    
+        Report Filters 
+    <div class="report-filters">
+        <select class="filter-select" id="reportDepartmentFilter">
+            <option value="">All Departments</option>
+            <option value="hr">Human Resources</option>
+            <option value="it">Information Technology</option>
+            <option value="finance">Finance</option>
+            <option value="marketing">Marketing</option>
+            <option value="sales">Sales</option>
+            <option value="operations">Operations</option>
+        </select>
+        <select class="filter-select" id="reportPeriodFilter">
+            <option value="current-month">Current Month</option>
+            <option value="last-month">Last Month</option>
+            <option value="current-quarter">Current Quarter</option>
+            <option value="last-quarter">Last Quarter</option>
+            <option value="current-year">Current Year</option>
+            <option value="custom">Custom Range</option>
+        </select>
+        <div class="date-range" id="customDateRange" style="display: none;">
+            <input type="date" id="reportStartDate" class="date-input">
+            <span>to</span>
+            <input type="date" id="reportEndDate" class="date-input">
+        </div>
+    </div>
+    
+        Overview Reports 
+    <div class="report-content" id="overview-reports">
+        <div class="reports-grid">
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Employee Summary</h3>
+                    <button class="report-action" data-report="employee-summary">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Comprehensive overview of all employees, departments, and roles</p>
+                <div class="report-stats">
+                    <span>Last generated: 2 days ago</span>
+                    <span>156 employees</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Department Analysis</h3>
+                    <button class="report-action" data-report="department-analysis">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Department-wise breakdown of employees, budgets, and performance</p>
+                <div class="report-stats">
+                    <span>Last generated: 1 week ago</span>
+                    <span>6 departments</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Monthly Dashboard</h3>
+                    <button class="report-action" data-report="monthly-dashboard">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Key metrics and KPIs for the current month</p>
+                <div class="report-stats">
+                    <span>Last generated: Yesterday</span>
+                    <span>March 2024</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Compliance Report</h3>
+                    <button class="report-action" data-report="compliance-report">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Regulatory compliance and audit trail information</p>
+                <div class="report-stats">
+                    <span>Last generated: 3 days ago</span>
+                    <span>All compliant</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Employee Reports 
+    <div class="report-content" id="employee-reports" style="display: none;">
+        <div class="reports-grid">
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Employee Directory</h3>
+                    <button class="report-action" data-report="employee-directory">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Complete list of employees with contact information</p>
+                <div class="report-stats">
+                    <span>Last generated: Today</span>
+                    <span>156 employees</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Performance Review</h3>
+                    <button class="report-action" data-report="performance-review">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Employee performance ratings and feedback summary</p>
+                <div class="report-stats">
+                    <span>Last generated: 1 week ago</span>
+                    <span>Q1 2024</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Skills Matrix</h3>
+                    <button class="report-action" data-report="skills-matrix">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Employee skills and competency mapping</p>
+                <div class="report-stats">
+                    <span>Last generated: 5 days ago</span>
+                    <span>45 skills tracked</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Training Report</h3>
+                    <button class="report-action" data-report="training-report">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Training completion and certification status</p>
+                <div class="report-stats">
+                    <span>Last generated: 3 days ago</span>
+                    <span>23 certifications</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Attendance Reports 
+    <div class="report-content" id="attendance-reports" style="display: none;">
+        <div class="reports-grid">
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Daily Attendance</h3>
+                    <button class="report-action" data-report="daily-attendance">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Daily attendance summary with check-in/out times</p>
+                <div class="report-stats">
+                    <span>Last generated: Today</span>
+                    <span>91% attendance</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Monthly Attendance</h3>
+                    <button class="report-action" data-report="monthly-attendance">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Monthly attendance patterns and trends</p>
+                <div class="report-stats">
+                    <span>Last generated: Yesterday</span>
+                    <span>March 2024</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Overtime Report</h3>
+                    <button class="report-action" data-report="overtime-report">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Overtime hours and compensation analysis</p>
+                <div class="report-stats">
+                    <span>Last generated: 2 days ago</span>
+                    <span>245 OT hours</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Leave Analysis</h3>
+                    <button class="report-action" data-report="leave-analysis">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Leave patterns, balances, and utilization</p>
+                <div class="report-stats">
+                    <span>Last generated: 4 days ago</span>
+                    <span>23 pending requests</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Payroll Reports 
+    <div class="report-content" id="payroll-reports" style="display: none;">
+        <div class="reports-grid">
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Payroll Summary</h3>
+                    <button class="report-action" data-report="payroll-summary">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Monthly payroll totals and breakdowns</p>
+                <div class="report-stats">
+                    <span>Last generated: 1 day ago</span>
+                    <span>$485,600 total</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Salary Analysis</h3>
+                    <button class="report-action" data-report="salary-analysis">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Salary distribution and compensation analysis</p>
+                <div class="report-stats">
+                    <span>Last generated: 3 days ago</span>
+                    <span>$3,420 avg salary</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Tax Report</h3>
+                    <button class="report-action" data-report="tax-report">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Tax deductions and compliance reporting</p>
+                <div class="report-stats">
+                    <span>Last generated: 1 week ago</span>
+                    <span>$97,120 total tax</span>
+                </div>
+            </div>
+            
+            <div class="report-card">
+                <div class="report-header">
+                    <h3>Benefits Report</h3>
+                    <button class="report-action" data-report="benefits-report">
+                        <span>📄</span>
+                        Generate
+                    </button>
+                </div>
+                <p>Employee benefits utilization and costs</p>
+                <div class="report-stats">
+                    <span>Last generated: 5 days ago</span>
+                    <span>$45,200 benefits</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Recent Reports 
+    <div class="recent-reports">
+        <h3>Recent Reports</h3>
+        <div class="recent-reports-list">
+            <div class="recent-report-item">
+                <div class="report-info">
+                    <span class="report-name">Monthly Attendance Report</span>
+                    <span class="report-date">Generated on March 15, 2024</span>
+                </div>
+                <div class="report-actions">
+                    <button class="btn-icon" title="Download">📥</button>
+                    <button class="btn-icon" title="View">👁️</button>
+                    <button class="btn-icon" title="Share">📤</button>
+                </div>
+            </div>
+            
+            <div class="recent-report-item">
+                <div class="report-info">
+                    <span class="report-name">Payroll Summary - March 2024</span>
+                    <span class="report-date">Generated on March 14, 2024</span>
+                </div>
+                <div class="report-actions">
+                    <button class="btn-icon" title="Download">📥</button>
+                    <button class="btn-icon" title="View">👁️</button>
+                    <button class="btn-icon" title="Share">📤</button>
+                </div>
+            </div>
+            
+            <div class="recent-report-item">
+                <div class="report-info">
+                    <span class="report-name">Employee Directory</span>
+                    <span class="report-date">Generated on March 13, 2024</span>
+                </div>
+                <div class="report-actions">
+                    <button class="btn-icon" title="Download">📥</button>
+                    <button class="btn-icon" title="View">👁️</button>
+                    <button class="btn-icon" title="Share">📤</button>
+                </div>
+            </div>
+            
+            <div class="recent-report-item">
+                <div class="report-info">
+                    <span class="report-name">Department Analysis Q1</span>
+                    <span class="report-date">Generated on March 10, 2024</span>
+                </div>
+                <div class="report-actions">
+                    <button class="btn-icon" title="Download">📥</button>
+                    <button class="btn-icon" title="View">👁️</button>
+                    <button class="btn-icon" title="Share">📤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="settings-section" class="content-section">
+        Replaced placeholder with comprehensive settings section 
+    <div class="section-header">
+        <h2>System Settings</h2>
+        <div class="header-actions">
+            <button class="btn btn-secondary" id="exportSettingsBtn">
+                <span>📤</span>
+                Export Settings
+            </button>
+            <button class="btn btn-primary" id="saveSettingsBtn">
+                <span>💾</span>
+                Save Changes
+            </button>
+        </div>
+    </div>
+    
+        Settings Navigation 
+    <div class="settings-nav">
+        <button class="settings-nav-btn active" data-settings="general">
+            <span>⚙️</span>
+            General
+        </button>
+        <button class="settings-nav-btn" data-settings="company">
+            <span>🏢</span>
+            Company
+        </button>
+        <button class="settings-nav-btn" data-settings="users">
+            <span>👥</span>
+            Users & Roles
+        </button>
+        <button class="settings-nav-btn" data-settings="payroll">
+            <span>💰</span>
+            Payroll
+        </button>
+        <button class="settings-nav-btn" data-settings="attendance">
+            <span>📅</span>
+            Attendance
+        </button>
+        <button class="settings-nav-btn" data-settings="notifications">
+            <span>🔔</span>
+            Notifications
+        </button>
+        <button class="settings-nav-btn" data-settings="security">
+            <span>🔒</span>
+            Security
+        </button>
+        <button class="settings-nav-btn" data-settings="backup">
+            <span>💾</span>
+            Backup
+        </button>
+    </div>
+    
+        General Settings 
+    <div class="settings-content" id="general-settings">
+        <div class="settings-section">
+            <h3>Application Settings</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="appName">Application Name</label>
+                    <input type="text" id="appName" value="DreamHR" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="appVersion">Version</label>
+                    <input type="text" id="appVersion" value="1.0.0" class="setting-input" readonly>
+                </div>
+                <div class="setting-item">
+                    <label for="timezone">Default Timezone</label>
+                    <select id="timezone" class="setting-select">
+                        <option value="UTC">UTC</option>
+                        <option value="America/New_York">Eastern Time</option>
+                        <option value="America/Chicago">Central Time</option>
+                        <option value="America/Denver">Mountain Time</option>
+                        <option value="America/Los_Angeles" selected>Pacific Time</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="dateFormat">Date Format</label>
+                    <select id="dateFormat" class="setting-select">
+                        <option value="MM/DD/YYYY" selected>MM/DD/YYYY</option>
+                        <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                        <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="currency">Default Currency</label>
+                    <select id="currency" class="setting-select">
+                        <option value="USD" selected>USD ($)</option>
+                        <option value="EUR">EUR (€)</option>
+                        <option value="GBP">GBP (£)</option>
+                        <option value="CAD">CAD (C$)</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="language">Language</label>
+                    <select id="language" class="setting-select">
+                        <option value="en" selected>English</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                        <option value="de">German</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Display Settings</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label class="setting-label">Theme</label>
+                    <div class="radio-group">
+                        <label class="radio-container">
+                            <input type="radio" name="theme" value="light" checked>
+                            <span class="radio-mark"></span>
+                            Light
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="theme" value="dark">
+                            <span class="radio-mark"></span>
+                            Dark
+                        </label>
+                        <label class="radio-container">
+                            <input type="radio" name="theme" value="auto">
+                            <span class="radio-mark"></span>
+                            Auto
+                        </label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="recordsPerPage">Records Per Page</label>
+                    <select id="recordsPerPage" class="setting-select">
+                        <option value="10">10</option>
+                        <option value="25" selected>25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Company Settings 
+    <div class="settings-content" id="company-settings" style="display: none;">
+        <div class="settings-section">
+            <h3>Company Information</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" value="Dream Corporation" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="companyEmail">Company Email</label>
+                    <input type="email" id="companyEmail" value="info@dreamcorp.com" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="companyPhone">Company Phone</label>
+                    <input type="tel" id="companyPhone" value="+1 (555) 123-4567" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="companyWebsite">Website</label>
+                    <input type="url" id="companyWebsite" value="https://dreamcorp.com" class="setting-input">
+                </div>
+                <div class="setting-item full-width">
+                    <label for="companyAddress">Company Address</label>
+                    <textarea id="companyAddress" rows="3" class="setting-textarea">123 Business Ave, Suite 100
+                        San Francisco, CA 94105
+                        United States</textarea>
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Business Settings</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="fiscalYearStart">Fiscal Year Start</label>
+                    <select id="fiscalYearStart" class="setting-select">
+                        <option value="01" selected>January</option>
+                        <option value="04">April</option>
+                        <option value="07">July</option>
+                        <option value="10">October</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="workingDays">Working Days Per Week</label>
+                    <select id="workingDays" class="setting-select">
+                        <option value="5" selected>5 Days</option>
+                        <option value="6">6 Days</option>
+                        <option value="7">7 Days</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="workingHours">Working Hours Per Day</label>
+                    <input type="number" id="workingHours" value="8" min="1" max="24" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="employeeIdPrefix">Employee ID Prefix</label>
+                    <input type="text" id="employeeIdPrefix" value="EMP" class="setting-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Users & Roles Settings 
+    <div class="settings-content" id="users-settings" style="display: none;">
+        <div class="settings-section">
+            <h3>User Management</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label class="setting-label">User Registration</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="allowRegistration" checked>
+                        <label for="allowRegistration" class="toggle-label">Allow new user registration</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Email Verification</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="requireEmailVerification" checked>
+                        <label for="requireEmailVerification" class="toggle-label">Require email verification</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="defaultRole">Default Role for New Users</label>
+                    <select id="defaultRole" class="setting-select">
+                        <option value="employee" selected>Employee</option>
+                        <option value="manager">Manager</option>
+                        <option value="admin">Administrator</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="sessionTimeout">Session Timeout (minutes)</label>
+                    <input type="number" id="sessionTimeout" value="60" min="5" max="480" class="setting-input">
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Role Permissions</h3>
+            <div class="permissions-table">
+                <div class="permissions-header">
+                    <span>Permission</span>
+                    <span>Employee</span>
+                    <span>Manager</span>
+                    <span>Admin</span>
+                </div>
+                <div class="permission-row">
+                    <span>View Employees</span>
+                    <input type="checkbox" checked disabled>
+                    <input type="checkbox" checked>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="permission-row">
+                    <span>Add/Edit Employees</span>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" checked>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="permission-row">
+                    <span>Delete Employees</span>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="permission-row">
+                    <span>View Payroll</span>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" checked>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="permission-row">
+                    <span>Process Payroll</span>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="permission-row">
+                    <span>Generate Reports</span>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" checked>
+                    <input type="checkbox" checked>
+                </div>
+                <div class="permission-row">
+                    <span>System Settings</span>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" disabled>
+                    <input type="checkbox" checked>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Payroll Settings 
+    <div class="settings-content" id="payroll-settings" style="display: none;">
+        <div class="settings-section">
+            <h3>Payroll Configuration</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="payrollFrequency">Payroll Frequency</label>
+                    <select id="payrollFrequency" class="setting-select">
+                        <option value="weekly">Weekly</option>
+                        <option value="biweekly">Bi-weekly</option>
+                        <option value="monthly" selected>Monthly</option>
+                        <option value="quarterly">Quarterly</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="payrollDay">Payroll Day</label>
+                    <select id="payrollDay" class="setting-select">
+                        <option value="1">1st of month</option>
+                        <option value="15">15th of month</option>
+                        <option value="last" selected>Last day of month</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="overtimeRate">Overtime Rate (%)</label>
+                    <input type="number" id="overtimeRate" value="150" min="100" max="300" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="overtimeThreshold">Overtime Threshold (hours)</label>
+                    <input type="number" id="overtimeThreshold" value="40" min="1" max="80" class="setting-input">
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Tax & Deductions</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="incomeTaxRate">Income Tax Rate (%)</label>
+                    <input type="number" id="incomeTaxRate" value="20" min="0" max="50" step="0.1" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="socialSecurityRate">Social Security Rate (%)</label>
+                    <input type="number" id="socialSecurityRate" value="6.2" min="0" max="15" step="0.1" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="medicareRate">Medicare Rate (%)</label>
+                    <input type="number" id="medicareRate" value="1.45" min="0" max="5" step="0.01" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="providentFundRate">Provident Fund Rate (%)</label>
+                    <input type="number" id="providentFundRate" value="12" min="0" max="25" step="0.1" class="setting-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Attendance Settings 
+    <div class="settings-content" id="attendance-settings" style="display: none;">
+        <div class="settings-section">
+            <h3>Attendance Rules</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="workStartTime">Work Start Time</label>
+                    <input type="time" id="workStartTime" value="09:00" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="workEndTime">Work End Time</label>
+                    <input type="time" id="workEndTime" value="17:00" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="lateThreshold">Late Threshold (minutes)</label>
+                    <input type="number" id="lateThreshold" value="15" min="1" max="60" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="breakDuration">Break Duration (minutes)</label>
+                    <input type="number" id="breakDuration" value="60" min="15" max="120" class="setting-input">
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Leave Policies</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="annualLeave">Annual Leave Days</label>
+                    <input type="number" id="annualLeave" value="20" min="0" max="50" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="sickLeave">Sick Leave Days</label>
+                    <input type="number" id="sickLeave" value="10" min="0" max="30" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="personalLeave">Personal Leave Days</label>
+                    <input type="number" id="personalLeave" value="5" min="0" max="20" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Carry Forward Leave</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="carryForwardLeave" checked>
+                        <label for="carryForwardLeave" class="toggle-label">Allow carry forward to next year</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Notification Settings 
+    <div class="settings-content" id="notifications-settings" style="display: none;">
+        <div class="settings-section">
+            <h3>Email Notifications</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label class="setting-label">New Employee Registration</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="notifyNewEmployee" checked>
+                        <label for="notifyNewEmployee" class="toggle-label">Send notification</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Payroll Processing</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="notifyPayroll" checked>
+                        <label for="notifyPayroll" class="toggle-label">Send notification</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Leave Requests</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="notifyLeaveRequest" checked>
+                        <label for="notifyLeaveRequest" class="toggle-label">Send notification</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Attendance Alerts</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="notifyAttendance" checked>
+                        <label for="notifyAttendance" class="toggle-label">Send notification</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Email Configuration</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="smtpServer">SMTP Server</label>
+                    <input type="text" id="smtpServer" value="smtp.gmail.com" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="smtpPort">SMTP Port</label>
+                    <input type="number" id="smtpPort" value="587" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="smtpUsername">SMTP Username</label>
+                    <input type="email" id="smtpUsername" value="noreply@dreamcorp.com" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="smtpPassword">SMTP Password</label>
+                    <input type="password" id="smtpPassword" value="••••••••" class="setting-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Security Settings 
+    <div class="settings-content" id="security-settings" style="display: none;">
+        <div class="settings-section">
+            <h3>Password Policy</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label for="minPasswordLength">Minimum Password Length</label>
+                    <input type="number" id="minPasswordLength" value="8" min="6" max="20" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Require Uppercase</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="requireUppercase" checked>
+                        <label for="requireUppercase" class="toggle-label">Require uppercase letters</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Require Numbers</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="requireNumbers" checked>
+                        <label for="requireNumbers" class="toggle-label">Require numbers</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Require Special Characters</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="requireSpecialChars" checked>
+                        <label for="requireSpecialChars" class="toggle-label">Require special characters</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="passwordExpiry">Password Expiry (days)</label>
+                    <input type="number" id="passwordExpiry" value="90" min="30" max="365" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="maxLoginAttempts">Max Login Attempts</label>
+                    <input type="number" id="maxLoginAttempts" value="5" min="3" max="10" class="setting-input">
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Two-Factor Authentication</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label class="setting-label">Enable 2FA</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="enable2FA">
+                        <label for="enable2FA" class="toggle-label">Enable two-factor authentication</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label class="setting-label">Require 2FA for Admins</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="require2FAAdmin" checked>
+                        <label for="require2FAAdmin" class="toggle-label">Require 2FA for administrators</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        Backup Settings 
+    <div class="settings-content" id="backup-settings" style="display: none;">
+        <div class="settings-section">
+            <h3>Backup Configuration</h3>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <label class="setting-label">Automatic Backups</label>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="autoBackup" checked>
+                        <label for="autoBackup" class="toggle-label">Enable automatic backups</label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="backupFrequency">Backup Frequency</label>
+                    <select id="backupFrequency" class="setting-select">
+                        <option value="daily" selected>Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="backupTime">Backup Time</label>
+                    <input type="time" id="backupTime" value="02:00" class="setting-input">
+                </div>
+                <div class="setting-item">
+                    <label for="retentionPeriod">Retention Period (days)</label>
+                    <input type="number" id="retentionPeriod" value="30" min="7" max="365" class="setting-input">
+                </div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Backup Actions</h3>
+            <div class="backup-actions">
+                <button class="btn btn-primary" id="createBackupBtn">
+                    <span>💾</span>
+                    Create Backup Now
+                </button>
+                <button class="btn btn-secondary" id="restoreBackupBtn">
+                    <span>🔄</span>
+                    Restore from Backup
+                </button>
+                <button class="btn btn-secondary" id="downloadBackupBtn">
+                    <span>📥</span>
+                    Download Latest Backup
+                </button>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <h3>Recent Backups</h3>
+            <div class="backup-list">
+                <div class="backup-item">
+                    <div class="backup-info">
+                        <span class="backup-name">Full Backup - March 15, 2024</span>
+                        <span class="backup-size">245 MB</span>
+                        <span class="backup-status success">Completed</span>
+                    </div>
+                    <div class="backup-actions">
+                        <button class="btn-icon" title="Download">📥</button>
+                        <button class="btn-icon" title="Restore">🔄</button>
+                        <button class="btn-icon" title="Delete">🗑️</button>
+                    </div>
+                </div>
+                <div class="backup-item">
+                    <div class="backup-info">
+                        <span class="backup-name">Full Backup - March 14, 2024</span>
+                        <span class="backup-size">243 MB</span>
+                        <span class="backup-status success">Completed</span>
+                    </div>
+                    <div class="backup-actions">
+                        <button class="btn-icon" title="Download">📥</button>
+                        <button class="btn-icon" title="Restore">🔄</button>
+                        <button class="btn-icon" title="Delete">🗑️</button>
+                    </div>
+                </div>
+                <div class="backup-item">
+                    <div class="backup-info">
+                        <span class="backup-name">Full Backup - March 13, 2024</span>
+                        <span class="backup-size">241 MB</span>
+                        <span class="backup-status success">Completed</span>
+                    </div>
+                    <div class="backup-actions">
+                        <button class="btn-icon" title="Download">📥</button>
+                        <button class="btn-icon" title="Restore">🔄</button>
+                        <button class="btn-icon" title="Delete">🗑️</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
