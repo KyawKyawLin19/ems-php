@@ -19,6 +19,17 @@ class Role
         return $stmt->fetchAll();
     }
 
+    public function addRoles($data){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("INSERT INTO roles (role_name, description, emoji, base_salary) VALUES (:name, :description, :emoji, :base_salary)");
+        return $stmt->execute([
+            ':name' => $data['name'],
+            ':description' => $data['description'],
+            ':emoji' => $data['emoji'],
+            ':base_salary' => $data['base_salary'],
+        ]);
+    }
+
 
 }
 ?>
