@@ -15,8 +15,7 @@
             <span class="nav-icon">👥</span>
             <span>Employees</span>
         </a>
-        <!-- Added new sidebar menu items -->
-        <a href="#" class="nav-item" data-section="roles">
+        <a href="roles.php" class="nav-item" data-section="roles">
             <span class="nav-icon">🎭</span>
             <span>Roles</span>
         </a>

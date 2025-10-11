@@ -3,6 +3,8 @@ require_once('Employee.php');
 $employeeObj = new Employee();
 $employees = $employeeObj->getEmployeeByRole(3);
 
+
+
 ?>
 <?php require_once('layouts/master.php') ?>
 <?php require_once('layouts/sidebar.php') ?>
@@ -30,7 +32,7 @@ $employees = $employeeObj->getEmployeeByRole(3);
             <div class="employee-grid" id="employeeGrid">
                     <!-- Employee cards will be populated by JavaScript  -->
                 <?php foreach ($employees as $employee): ?>
-                    <div class="employee-card" data-department="it">
+                    <a  href="employee_details.php?id=<?= $employee['id']?>" class="employee-card"  data-department="it">
                         <div class="employee-header">
                         <div class="employee-avatar">MC</div>
                         <div class="employee-info">
@@ -56,7 +58,7 @@ $employees = $employeeObj->getEmployeeByRole(3);
                             <span>Aug 20, 2022</span>
                         </div>
                         </div>
-                    </div>
+                </a>
                 <?php endforeach; ?>
             </div>
                 <!-- Added pagination section at bottom of employee section -->

@@ -4,7 +4,7 @@ class Employee
     private function getPDO()
     {
         try {
-            $pdo = new PDO("mysql:dbname=ems_db;host=localhost",'root','EBP!23ebp');
+            $pdo = new PDO("mysql:dbname=ems_db;host=localhost",'root','myatthinzar1259');
             $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             return $pdo;
         } catch (PDOException $e) {
@@ -69,6 +69,12 @@ class Employee
             ':basic_salary' => $data['basic_salary'],
             ':hire_date' => $data['hire_date']
         ]);
+    }
+
+    public function deleteEmployee($id){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("DELETE FROM employees WHERE id = :id");
+        $stmt->execute(['id' => $id]);
     }
 
     public function checkEmailExists($email)
