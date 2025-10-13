@@ -30,6 +30,15 @@ class Role
         ]);
     }
 
+    public function getRoleNames($id){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT role_name from roles where id=:id");
+        $stmt->execute([':id' => $id]);
+        $role_name = $stmt->fetch();
+        return $role_name[0];
+
+    }
+
 
 }
 ?>

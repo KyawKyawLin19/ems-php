@@ -38,7 +38,7 @@ class Employee
     public function addEmployee($data)
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->prepare("INSERT INTO employees (name, email, phone, address, gender, date_of_birth, department_id, role_id, basic_salary, hire_date) VALUES (:name, :email, :phone, :address, :gender, :date_of_birth, :department_id, :role_id, :basic_salary, :hire_date)");
+        $stmt = $pdo->prepare("INSERT INTO employees (name, email, phone, address, gender, date_of_birth, department_id, role_id, basic_salary, hire_date,employment_status) VALUES (:name, :email, :phone, :address, :gender, :date_of_birth, :department_id, :role_id, :basic_salary, :hire_date , :status)");
         return $stmt->execute([
             ':name' => $data['name'],
             ':email' => $data['email'],
@@ -49,7 +49,8 @@ class Employee
             ':department_id' => $data['department_id'],
             ':role_id' => 3, // Assuming '3' is the role_id for regular employees
             ':basic_salary' => $data['basic_salary'],
-            ':hire_date' => $data['hire_date']
+            ':hire_date' => $data['hire_date'],
+            ':status' =>$data['status'],
         ]);
     }
 
@@ -76,6 +77,11 @@ class Employee
         $stmt = $pdo->prepare("DELETE FROM employees WHERE id = :id");
         $stmt->execute(['id' => $id]);
     }
+
+    // public function editEmployee($id){
+    //     $pdo = $this->getPDO();
+    //     $stmt = $pdo->prepare("")
+    // }
 
     public function checkEmailExists($email)
     {

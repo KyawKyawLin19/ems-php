@@ -1,15 +1,23 @@
 <?php
 
 require_once("Employee.php");
+require_once("Role.php");
 //die(var_dump($_GET['id']));
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     
     $employeeObj = new Employee;
     $employee_detail = $employeeObj->getEmployeeById($id);
-    //$employee_delete = $employeeObj->deleteEmployee($id);
-    //die(var_dump($employee_detail));
+
+    $roleObj = new Role();
+    $id =  $employee_detail['role_id'];
+    $getRoleName = $roleObj->getRoleNames($id);
+    
     }
+if(isset($_POST['delete'])){
+    $employee_delete = $employeeObj->deleteEmployee($id);
+    echo "<script>alert('Successfully Deleted!');window.location.href='employees.php';</script>";
+}
 ?>
 
 <?php require_once('layouts/master.php') ?>
@@ -26,9 +34,9 @@ if(isset($_GET['id'])){
                          
                     </div>
                     <div class="employee-profile-info">
-                        <h2 id="detailEmployeeName">Employee Name</h2>
-                        <p id="detailEmployeePosition">Position</p>
-                        <span class="employee-status active" id="detailEmployeeStatus">Active</span>
+                        <h2 id="detailEmployeeName"><?= $employee_detail['name'] ?></h2>
+                        <p id="detailEmployeePosition"><?= $getRoleName?></p>
+                        <span class="employee-status active" id="detailEmployeeStatus"><?= $employee_detail['employment_status']?></span>
                     </div>
                 </div>
                 
@@ -65,15 +73,15 @@ if(isset($_GET['id'])){
                         <h4>Work Information</h4>
                         <div class="detail-item">
                             <span class="detail-label">Department:</span>
-                            <span class="detail-value" id="detailDepartment"><?= $employee_detail['department_id']?></span>
+                            <span class="detail-value" id="detailDepartment"><?= $employee_detail['department_id'] ?></span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Role:</span>
-                            <span class="detail-value" id="detailRole"><?= $employee_detail['role_id']?></span>
+                            <span class="detail-value" id="detailRole"><?= $getRoleName ?></span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Position:</span>
-                            <span class="detail-value" id="detailPosition">-</span>
+                            <span class="detail-label">Status</span>
+                            <span class="detail-value" id="detailPosition"><?= $employee_detail['employment_status']?></span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Basic Salary:</span>
@@ -90,20 +98,23 @@ if(isset($_GET['id'])){
                     </div>
                 </div>
                 
-                <div class="employee-actions">
-                    <button class="btn btn-primary" id="editEmployeeBtn">
-                        <span>✏️</span>
-                        Edit Employee
-                    </button>
-                    <button class="btn btn-secondary" id="deactivateEmployeeBtn">
-                        <span>🚫</span>
-                        Deactivate
-                    </button>
-                    <button class="btn btn-danger" id="deleteEmployeeBtn">
-                        <span>🗑️</span>
-                        Delete Employee
-                    </button>
-                </div>
+                <form method="POST">
+                    <div class="employee-actions">
+                        <a type="edit" name="edit" class="btn btn-primary" id="editEmployeeBtn"
+                                href="employee_edit.php?id=<?= $employee_detail['id'] ?>">
+                            <span>✏️</span>
+                            Edit Employee
+                        </a>
+                        <button class="btn btn-secondary" id="deactivateEmployeeBtn">
+                            <span>🚫</span>
+                            Deactivate
+                        </button>
+                        <button type="delete" name="delete" class="btn btn-danger" id="deleteEmployeeBtn">
+                            <span>🗑️</span>
+                            Delete Employee
+                        </button>
+                    </div>
+                </form>
             </div>
             </div>
     </div>

@@ -130,6 +130,33 @@ if(isset($_POST['submit'])) {
                         <span class="input-focus"></span>
                     </div>
 
+                    <!-- Added employee status field -->
+                    <div class="form-group">
+                        <label class="field-label">Employee Status</label>
+                        <div class="radio-group">
+                            <label class="radio-container">
+                                <input type="radio" name="status" value="active" required>
+                                <span class="radio-mark"></span>
+                                Active
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="status" value="inactive" required>
+                                <span class="radio-mark"></span>
+                                Inactive
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="status" value="on_leave" required>
+                                <span class="radio-mark"></span>
+                                On Leave
+                            </label>
+                            <label class="radio-container">
+                                <input type="radio" name="status" value="terminated" required>
+                                <span class="radio-mark"></span>
+                                Terminated
+                            </label>
+                        </div>
+                    </div>
+
                     <div class="modal-actions">
                         <button type="button" name="cancel" class="btn btn-secondary" id="cancelBtn">Cancel</button>
                         <button type="submit" name="submit" class="btn btn-primary">Add Employee</button>
