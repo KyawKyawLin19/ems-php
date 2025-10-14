@@ -78,10 +78,27 @@ class Employee
         $stmt->execute(['id' => $id]);
     }
 
-    // public function editEmployee($id){
-    //     $pdo = $this->getPDO();
-    //     $stmt = $pdo->prepare("")
-    // }
+    public function updateEmployee($data){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("UPDATE `employees` SET name = :name, email = :email, phone = :phone, address =:address , gender =:gender , date_of_birth =:date_of_birth , department_id = :department_id, role_id = :role_id , basic_salary =:basic_salary, hire_date =:hire_date WHERE id=:id");
+        $stmt->bindParam(":id", $data["id"]);
+        $stmt->bindParam(":name", $data["name"]);
+        $stmt->bindParam(":email", $data["email"]);
+        $stmt->bindParam(":phone", $data["phone"]);
+        $stmt->bindParam(":address", $data["address"]);
+        $stmt->bindParam(":gender", $data["gender"]);
+        $stmt->bindParam(":date_of_birth", $data["date_of_birth"]);
+        $stmt->bindParam(":department_id", $data["department_id"]);
+        $stmt->bindParam(":role_id", $data["role_id"]);
+        $stmt->bindParam(":basic_salary", $data["basic_salary"]);
+        $stmt->bindParam(":hire_date", $data["hire_date"]);
+
+        if($stmt->execute()){
+            return true;
+        }else {
+            return false;
+        }
+    }
 
     public function checkEmailExists($email)
     {

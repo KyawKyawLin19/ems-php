@@ -19,7 +19,7 @@
             <span class="nav-icon">🎭</span>
             <span>Roles</span>
         </a>
-        <a href="#" class="nav-item" data-section="departments">
+        <a href="departments.php" class="nav-item" data-section="departments">
             <span class="nav-icon">🏢</span>
             <span>Departments</span>
         </a>
