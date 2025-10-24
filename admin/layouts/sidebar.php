@@ -23,39 +23,39 @@
             <span class="nav-icon">🏢</span>
             <span>Departments</span>
         </a>
-        <a href="#" class="nav-item" data-section="assets">
+        <a href="assets.php" class="nav-item" data-section="assets">
             <span class="nav-icon">💼</span>
             <span>Assets</span>
         </a>
-        <a href="#" class="nav-item" data-section="holidays">
+        <a href="holidays.php" class="nav-item" data-section="holidays">
             <span class="nav-icon">🎉</span>
             <span>Holidays</span>
         </a>
-        <a href="#" class="nav-item" data-section="leaves">
+        <a href="leaves.php" class="nav-item" data-section="leaves">
             <span class="nav-icon">🏖️</span>
             <span>Leaves</span>
         </a>
-        <a href="#" class="nav-item" data-section="certification">
+        <a href="certifications.php" class="nav-item" data-section="certification">
             <span class="nav-icon">🏆</span>
             <span>Certification</span>
         </a>
-        <a href="#" class="nav-item" data-section="skills">
+        <a href="skills.php" class="nav-item" data-section="skills">
             <span class="nav-icon">⚡</span>
             <span>Skills</span>
         </a>
-        <a href="#" class="nav-item" data-section="attendance">
+        <a href="attendances.php" class="nav-item" data-section="attendance">
             <span class="nav-icon">📅</span>
             <span>Attendance</span>
         </a>
-        <a href="#" class="nav-item" data-section="payroll">
+        <a href="payrolls.php" class="nav-item" data-section="payroll">
             <span class="nav-icon">💰</span>
             <span>Payroll</span>
         </a>
-        <a href="#" class="nav-item" data-section="reports">
+        <a href="reports.php" class="nav-item" data-section="reports">
             <span class="nav-icon">📈</span>
             <span>Reports</span>
         </a>
-        <a href="#" class="nav-item" data-section="settings">
+        <a href="settings.php" class="nav-item" data-section="settings">
             <span class="nav-icon">⚙️</span>
             <span>Settings</span>
         </a>

@@ -16,7 +16,7 @@ if(isset($_GET['id'])){
     }
 if(isset($_POST['delete'])){
     $employee_delete = $employeeObj->deleteEmployee($id);
-    echo "<script>alert('Successfully Deleted!');window.location.href='employees.php';</script>";
+    echo "<script>window.location.href='employees.php';</script>";
 }
 ?>
 

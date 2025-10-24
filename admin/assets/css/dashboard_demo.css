@@ -242,7 +242,7 @@ body {
 
 /* Content Sections */
 .content-section {
-  display: none;
+  display: block;
 }
 
 .content-section.active {
@@ -4316,4 +4316,8 @@ body {
 .leave-table .table-row span {
   color: #6b7280;
   font-size: 0.9rem;
+}
+
+a{
+  text-decoration: none;
 }

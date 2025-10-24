@@ -38,7 +38,8 @@ class Employee
     public function addEmployee($data)
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->prepare("INSERT INTO employees (name, email, phone, address, gender, date_of_birth, department_id, role_id, basic_salary, hire_date,employment_status) VALUES (:name, :email, :phone, :address, :gender, :date_of_birth, :department_id, :role_id, :basic_salary, :hire_date , :status)");
+        $stmt = $pdo->prepare("INSERT INTO employees (name, email, phone, address, gender, date_of_birth, department_id, role_id, basic_salary, hire_date,employment_status) 
+        VALUES (:name, :email, :phone, :address, :gender, :date_of_birth, :department_id, :role_id, :basic_salary, :hire_date , :status)");
         return $stmt->execute([
             ':name' => $data['name'],
             ':email' => $data['email'],
