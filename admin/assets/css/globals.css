@@ -4,39 +4,72 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #f0fdf4; /* Very light green background */
-  --foreground: #374151; /* Soft gray for text */
-  --card: #ffffff; /* Pure white for cards */
-  --card-foreground: #374151; /* Text on cards */
-  --popover: #ffffff; /* White for popovers */
-  --popover-foreground: #374151; /* Text in popovers */
-  --primary: #a8e6cf; /* Primary soft pale green */
-  --primary-foreground: #374151; /* Text on primary elements */
-  --secondary: #ffabab; /* Soft blush pink for accents */
-  --secondary-foreground: #374151; /* Text on secondary elements */
-  --muted: #fdf2f8; /* Light pastel pink for muted elements */
-  --muted-foreground: #6b7280; /* Lighter text on muted elements */
-  --accent: #ffabab; /* Accent color */
-  --accent-foreground: #374151; /* Text on accent elements */
-  --destructive: #ff6f61; /* Soft coral for errors */
-  --destructive-foreground: #ffffff; /* White text for destructive actions */
-  --border: #e5e7eb; /* Light border for elements */
-  --input: #ffffff; /* Input field background */
-  --ring: #a8e6cf; /* Ring color on focus */
-  --chart-1: #ffabab; /* Soft blush for charts */
-  --chart-2: #a8e6cf; /* Soft pale green for charts */
-  --chart-3: #fdf2f8; /* Light pastel for charts */
-  --chart-4: #6b7280; /* Soft gray for charts */
-  --chart-5: #ff6f61; /* Coral for charts */
-  --radius: 0.75rem; /* Rounded corners for a soft aesthetic */
-  --sidebar: #fdf2f8; /* Light pink sidebar background */
-  --sidebar-foreground: #374151; /* Text in sidebar */
-  --sidebar-primary: #a8e6cf; /* Primary sidebar color */
-  --sidebar-primary-foreground: #374151; /* Text on primary sidebar elements */
-  --sidebar-accent: #ffabab; /* Accent color for sidebar elements */
-  --sidebar-accent-foreground: #374151; /* Text on sidebar accent elements */
-  --sidebar-border: #e5e7eb; /* Light border for sidebar */
-  --sidebar-ring: #a8e6cf; /* Focus ring color for sidebar */
+  --background: #f0fdf4;
+  /* Very light green background */
+  --foreground: #374151;
+  /* Soft gray for text */
+  --card: #ffffff;
+  /* Pure white for cards */
+  --card-foreground: #374151;
+  /* Text on cards */
+  --popover: #ffffff;
+  /* White for popovers */
+  --popover-foreground: #374151;
+  /* Text in popovers */
+  --primary: #a8e6cf;
+  /* Primary soft pale green */
+  --primary-foreground: #374151;
+  /* Text on primary elements */
+  --secondary: #ffabab;
+  /* Soft blush pink for accents */
+  --secondary-foreground: #374151;
+  /* Text on secondary elements */
+  --muted: #fdf2f8;
+  /* Light pastel pink for muted elements */
+  --muted-foreground: #6b7280;
+  /* Lighter text on muted elements */
+  --accent: #ffabab;
+  /* Accent color */
+  --accent-foreground: #374151;
+  /* Text on accent elements */
+  --destructive: #ff6f61;
+  /* Soft coral for errors */
+  --destructive-foreground: #ffffff;
+  /* White text for destructive actions */
+  --border: #e5e7eb;
+  /* Light border for elements */
+  --input: #ffffff;
+  /* Input field background */
+  --ring: #a8e6cf;
+  /* Ring color on focus */
+  --chart-1: #ffabab;
+  /* Soft blush for charts */
+  --chart-2: #a8e6cf;
+  /* Soft pale green for charts */
+  --chart-3: #fdf2f8;
+  /* Light pastel for charts */
+  --chart-4: #6b7280;
+  /* Soft gray for charts */
+  --chart-5: #ff6f61;
+  /* Coral for charts */
+  --radius: 0.75rem;
+  /* Rounded corners for a soft aesthetic */
+  --sidebar: #fdf2f8;
+  /* Light pink sidebar background */
+  --sidebar-foreground: #374151;
+  /* Text in sidebar */
+  --sidebar-primary: #a8e6cf;
+  /* Primary sidebar color */
+  --sidebar-primary-foreground: #374151;
+  /* Text on primary sidebar elements */
+  --sidebar-accent: #ffabab;
+  /* Accent color for sidebar elements */
+  --sidebar-accent-foreground: #374151;
+  /* Text on sidebar accent elements */
+  --sidebar-border: #e5e7eb;
+  /* Light border for sidebar */
+  --sidebar-ring: #a8e6cf;
+  /* Focus ring color for sidebar */
 }
 
 .dark {
@@ -119,6 +152,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
   }
@@ -126,10 +160,12 @@
 
 /* Custom dreamy animations */
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -140,6 +176,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -161,4 +198,38 @@
 
 .dreamy-gradient-light {
   background: linear-gradient(135deg, var(--background) 0%, var(--muted) 100%);
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.status.active {
+  background-color: #e6f9ee;
+  color: #1b7945;
+  border: 1px solid #a8e6b3;
+}
+
+.status.inactive {
+  background-color: #fceaea !important;
+  color: #b91c1c !important;
+  border: 1px solid #f5b5b5 !important;
+}
+
+.status.pending {
+  background-color: #fff8e5;
+  color: #a16207;
+  border: 1px solid #f9dc8b;
+}
+
+.status.closed {
+  background-color: #e9e9e9;
+  color: #555;
+  border: 1px solid #ccc;
 }

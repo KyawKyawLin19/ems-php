@@ -3,7 +3,8 @@
 require_once('Employee.php');
 if(isset($_POST['submit'])) {
     $employeeObj = new Employee();
-    $result = $employeeObj->addEmployee($_POST);
+    $loggedInUserId = 1;
+    $result = $employeeObj->addEmployee($_POST,$loggedInUserId);
     if ($result) {
         echo "<script>alert('Successfully Created!');window.location.href='employees.php';</script>";
     }
@@ -12,12 +13,21 @@ if(isset($_POST['submit'])) {
 ?>
 
 <?php require_once('layouts/master.php') ?>
-        <!-- Add Employee Modal  -->
+        <header class="main-header">
+            <div class="header-left">
+                <h1 id="pageTitle">Add New Employee</h1><br>
+                <p>Ready to add a new employee? Fill out the form below.</p>
+            </div>
+            <div class="header-right">
+                <button class="notification-btn">
+                    <span>🔔</span>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="date-display" id="currentDate"></div>
+            </div>
+        </header>
         <div>
             <div>
-                <div>
-                    <h3>Add New Employee</h3>
-                </div>
                 <form method="POST" id="addEmployeeForm" class="modal-form">
                     <!-- Combined name field like in registration  -->
                     <div class="form-group">
@@ -79,7 +89,7 @@ if(isset($_POST['submit'])) {
                         <div class="form-group">
                             <label for="empDepartment">Department</label>
                             <select id="empDepartment" name="department_id" required>
-                                <option value="">Select Department</option>
+                                <option>Select Department</option>
                                 <option value="1">Human Resources</option>
                                 <option value="2">Information Technology</option>
                                 <option value="3">Finance</option>
@@ -94,7 +104,7 @@ if(isset($_POST['submit'])) {
                         <div class="form-group">
                             <label for="empRole">Role</label>
                             <select id="empRole" name="role_id" required>
-                                <option value="">Select Role</option>
+                                <option>Select Role</option>
                                 <option value="2">HR</option>
                                 <option value="4">Team Leader</option>
                                 <option value="3"> Employee</option>
@@ -106,32 +116,19 @@ if(isset($_POST['submit'])) {
                         
                         <!-- Updated salary field to match registration  -->
                         <div class="form-group">
-                            <label for="empBasicSalary">Basic Salary</label>
+                            <label for="empBasicSalary">Basic Salary ($)</label>
                             <input type="number" id="empBasicSalary" name="basic_salary" min="0" step="100" required>
                             <span class="input-focus"></span>
                         </div>
-                    
-
-                    <!-- Added profile photo upload (optional)  -->
-                    <div class="form-group">
-                        <label for="empProfilePhoto">Profile Photo <span class="optional">(Optional)</span></label>
-                        <div class="file-upload-container">
-                            <input type="file" id="empProfilePhoto" accept="image/*" class="file-input">
-                            <label for="empProfilePhoto" class="file-upload-label">
-                                <span class="upload-icon">📷</span>
-                            </label>
-                            <div class="file-preview" id="empFilePreview"></div>
-                        </div>
-                    </div>
 
                     <div class="form-group">
-                        <label for="empStartDate">Start Date</label>
+                        <label for="empStartDate">Hire Date</label>
                         <input type="date" id="empStartDate" name="hire_date" required>
                         <span class="input-focus"></span>
                     </div>
 
                     <!-- Added employee status field -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label class="field-label">Employee Status</label>
                         <div class="radio-group">
                             <label class="radio-container">
@@ -155,7 +152,7 @@ if(isset($_POST['submit'])) {
                                 Terminated
                             </label>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="modal-actions">
                         <button type="button" name="cancel" class="btn btn-secondary" id="cancelBtn">Cancel</button>

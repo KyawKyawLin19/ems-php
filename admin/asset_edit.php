@@ -4,12 +4,18 @@ if(isset($_GET['id'])){
     $assetObj = new Asset();
     $assets = $assetObj->getAssetById($_GET['id']);
     $asset_detail= $assets[0];
+    //die(var_dump($asset_detail));
 }
 
 if(isset($_POST['submit'])){
     //die(var_dump($_POST));
     $assetObj = new Asset();
     $asset_update = $assetObj->updateAsset($_POST);
+    $id = $_POST['id'];
+    //die(var_dump($id));
+    if($asset_update){
+        header("Location: asset_details.php?id=$id");;
+    }
 }
 ?>
 
@@ -28,15 +34,15 @@ if(isset($_POST['submit'])){
             </div>
             <div class="form-group">
                 <label for="assetType">Asset Type</label>
+                <?php $asset_type = $asset_detail['asset_type']; ?>
                 <select id="assetType" name="asset_type"  required>
-                    <option value=""><?php if(isset($asset_detail['asset_type'])){echo $asset_detail['asset_type'];} ?></option>
-                    <option value="1">Laptop</option>
-                    <option value="2">Desktop</option>
-                    <option value="3">Monitor</option>
-                    <option value="4">Printer</option>
-                    <option value="5">Phone</option>
-                    <option value="6">Tablet</option>
-                    <option value="7">Other</option>
+                    <option value="laptop" <?php if($asset_type === "laptop"){echo "selected";}?>>Laptop</option>
+                    <option value="desktop" <?php if($asset_type === "desktop"){echo "selected";}?>>Desktop</option>
+                    <option value="monitor" <?php if($asset_type === "monitor"){echo "selected";}?>>Monitor</option>
+                    <option value="printer" <?php if($asset_type === "printer"){echo "selected";}?>>Printer</option>
+                    <option value="phone" <?php if($asset_type === "phone"){echo "selected";}?>>Phone</option>
+                    <option value="tablet" <?php if($asset_type === "tablet"){echo "selected";}?>>Tablet</option>
+                    <option value="other" <?php if($asset_type === "other"){echo "selected";}?>>Other</option>
                 </select>
             </div>
             <div class="form-group">
@@ -77,36 +83,35 @@ if(isset($_POST['submit'])){
             </div>
             <div class="form-group">
                 <label for="assetStatus">Asset Status</label>
+                <?php $asset_status = $asset_detail['asset_status']; ?>
                 <select id="assetStatus" name="asset_status" required>
-                    <option value=""><?php if(isset($asset_detail['asset_status'])){echo $asset_detail['asset_status'];} ?></option>
-                    <option value="1">Assigned</option>
-                    <option value="2">Unassigned</option>
-                    <option value="3">Maintenance</option>
-                    <option value="4">Retired</option>
+                    <option value="assigned" <?php if($asset_status === "assigned"){echo "selected";}?>>Assigned</option>
+                    <option value="unassigned" <?php if($asset_status === "unassigned"){echo "selected";}?>>Unassigned</option>
+                    <option value="maintenance" <?php if($asset_status === "maintenance"){echo "selected";}?>>Maintenance</option>
+                    <option value="retired" <?php if($asset_status === "retired"){echo "selected";}?>>Retired</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="conditionStatus">Condition Status</label>
+                <?php $condition_status = $asset_detail['condition_status']; ?>
                 <select id="conditionStatu" name="condition_status" required>
-                    <option value=""><?php if(isset($asset_detail['condition_status'])){echo $asset_detail['condition_status'];} ?></option>
-                    <option value="1">New</option>
-                    <option value="2">Good</option>
-                    <option value="3">Fair</option>
-                    <option value="4">Poor</option>
-                    <option value="4">Damaged</option>
+                    <option value="new" <?php if($condition_status === "new"){echo "selected";}?>>New</option>
+                    <option value="good" <?php if($condition_status === "good"){echo "selected";}?>>Good</option>
+                    <option value="fair" <?php if($condition_status === "fair"){echo "selected";}?>>Fair</option>
+                    <option value="poor" <?php if($condition_status === "poor"){echo "selected";}?>>Poor</option>
+                    <option value="damaged" <?php if($condition_status === "damaged"){echo "selected";}?>>Damaged</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="assetNotes">Notes</label>
-                <textarea id="assetNotes" name="notes" rows="3" 
-                           value="<?php if(isset($asset_detail['notes'])){echo $asset_detail['notes'];} ?>"></textarea>
+                <textarea id="assetNotes" name="notes" rows="3"><?php if(isset($asset_detail['notes'])){echo $asset_detail['notes'];}?></textarea>
             </div>
         </div>
       
 
         <div class="employee-edit-actions">
-            <a href="asset_details.php?id=<?= $asset_detail['id'] ?>" name="submit" type="submit" class="btn btn-primary">💾 Save Changes</a>
-            <a href="asset_details.php?id=<?= $asset_detail['id'] ?>" class="btn btn-secondary">⬅️ Cancel</a>
+            <button name="submit" type="submit" class="btn btn-primary">💾 Save Changes</button>
+            <button class="btn btn-secondary">⬅️ Cancel</button>
         </div>
         
     </form>

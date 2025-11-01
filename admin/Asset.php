@@ -80,6 +80,35 @@ Class Asset{
         $stmt = $pdo->prepare("DELETE FROM assets WHERE id = :id");
         $stmt->execute(['id' => $id]);
     }
+
+    public function pagination_asset($offset, $no_offrecs){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM assets LIMIT $offset, $no_offrecs");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function filter_pagination($offset, $no_offrecs,$asset_type='all_types',$asset_name=null){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM assets WHERE asset_type = :asset_type OR assets_name = :assets_name LIMIT $offset, $no_offrecs");
+        $stmt->execute([
+            ':asset_type' => $asset_type,
+            ':assets_name' => $asset_name]);
+        return $stmt->fetchAll();
+    }
+
+    public function filter_asset($asset_type='all_types',$asset_name=null){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM assets WHERE asset_type = :asset_type OR  assets_name = :assets_name");
+        $stmt->execute([
+            ':asset_type' => $asset_type,
+            ':assets_name' => $asset_name]);
+        return $stmt->fetchAll();
+    }
+
+
+
+
 }
 
 ?>

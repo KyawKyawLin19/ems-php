@@ -425,7 +425,7 @@ function setupEmployeeDetailModal() {
 
   // Setup action buttons
   const editBtn = document.getElementById("editEmployeeBtn")
-  const deactivateBtn = document.getElementById("deactivateEmployeeBtn")
+  const terminateBtn = document.getElementById("terminateEmployeeBtn")
   const deleteBtn = document.getElementById("deleteEmployeeBtn")
 
   editBtn.addEventListener("click", () => {
@@ -433,9 +433,9 @@ function setupEmployeeDetailModal() {
     showNotification("Edit functionality coming soon!", "info")
   })
 
-  deactivateBtn.addEventListener("click", () => {
-    // TODO: Implement deactivate functionality
-    showNotification("Deactivate functionality coming soon!", "info")
+  terminateBtn.addEventListener("click", () => {
+    // TODO: Implement terminate functionality
+    showNotification("Terminate functionality coming soon!", "info")
   })
 
   deleteBtn.addEventListener("click", () => {
@@ -813,15 +813,14 @@ function showNotification(message, type) {
         z-index: 1001;
         transform: translateX(100%);
         transition: transform 0.3s ease;
-        ${
-          type === "success"
-            ? "background: #a8e6cf; color: #374151;"
-            : type === "error"
-              ? "background: #ff6f61;"
-              : type === "info"
-                ? "background: #60a5fa; color: #374151;"
-                : "background: #ff6f61;"
-        }
+        ${type === "success"
+      ? "background: #a8e6cf; color: #374151;"
+      : type === "error"
+        ? "background: #ff6f61;"
+        : type === "info"
+          ? "background: #60a5fa; color: #374151;"
+          : "background: #ff6f61;"
+    }
     `
 
   document.body.appendChild(notification)

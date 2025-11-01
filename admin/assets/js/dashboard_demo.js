@@ -467,7 +467,7 @@ function setupEmployeeDetailModal() {
 
   // Setup action buttons
   const editBtn = document.getElementById("editEmployeeBtn")
-  const deactivateBtn = document.getElementById("deactivateEmployeeBtn")
+  const terminateBtn = document.getElementById("terminateEmployeeBtn")
   const deleteBtn = document.getElementById("deleteEmployeeBtn")
 
   editBtn.addEventListener("click", () => {

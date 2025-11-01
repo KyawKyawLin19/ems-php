@@ -243,7 +243,7 @@ body {
 
 /* Content Sections */
 .content-section {
-  display: none;
+  display: block;
 }
 
 .content-section.active {
