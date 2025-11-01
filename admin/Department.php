@@ -21,4 +21,24 @@ class Department
         $departments = $stmt->fetchAll();
         return $departments;
     }
+
+    public function addDepartment($data)
+    {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("
+            INSERT INTO departments (name, code, icon, description, status, leader_id, created_at, updated_at)
+            VALUES (:name, :code, :icon, :description, :status, :leader_id, :created_at, :updated_at)
+        ");
+
+        return $stmt->execute([
+            ':name'        => $data['name'],
+            ':code'        => $data['code'],
+            ':icon'        => $data['icon'],
+            ':description' => $data['description'],
+            ':status'      => $data['status'],
+            ':leader_id'   => $data['leader_id'],
+            ':created_at'  => date('Y-m-d H:i:s'),
+            ':updated_at'  => date('Y-m-d H:i:s')
+        ]);
+    }
 }

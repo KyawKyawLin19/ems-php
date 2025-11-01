@@ -12,6 +12,7 @@ if (isset($_GET['id'])) {
     if (!$employee_detail) {
         die("Employee not found.");
     }
+    $employeeDepartmentName = $employeeObj->getDepartmentName($employee_detail->department_id);
     $getRoleName = $roleObj->getRoleNames($employee_detail->role_id);
 }
 
@@ -48,11 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             header("Location: employee_details.php?id=$employee_id");
             exit;
         } else die('Failed to activate employee.');
-    } elseif ($action === 'deactivate') {
-        if ($employeeObj->deactivateEmployee($employee_id)) {
+    } elseif ($action === 'terminate') {
+        if ($employeeObj->terminateEmployee($employee_id)) {
             header("Location: employee_details.php?id=$employee_id");
             exit;
-        } else die('Failed to deactivate employee.');
+        } else die('Failed to terminate employee.');
     } elseif ($action === 'delete') {
         if ($employeeObj->deleteEmployee($employee_id)) {
             header("Location: employees.php");
@@ -81,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                         </span>
                     <?php else: ?>
                         <span class="employee-status <?= escape($employee_detail->employment_status) ?>" style="background-color: red;color: white;">
-                            <?= escape("DEACTIVATED") ?>
+                            <?= escape("TERMINATED") ?>
                         </span>
                     <?php endif; ?>
                 </div>
@@ -145,8 +146,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
                     <div class="detail-item">
                         <span class="detail-label">Department:</span>
-                        <span class="detail-value editable-text"><?= escape($employee_detail->department_id) ?></span>
-                        <input type="text" name="department_id" value="<?= escape($employee_detail->department_id) ?>" class="editable-input" style="display:none;">
+                        <span class="detail-value editable-text"><?= escape($employeeDepartmentName) ?></span>
+                        <select id="empDepartment" name="department_id" class="editable-input" style="display:none;" required>
+                            <option value="">Select Department</option>
+                            <option value="1" <?= $employee_detail->department_id == 1 ? 'selected' : '' ?>>Information Technology</option>
+                            <option value="2" <?= $employee_detail->department_id == 2 ? 'selected' : '' ?>>Marketing</option>
+                            <option value="3" <?= $employee_detail->department_id == 3 ? 'selected' : '' ?>>Human Resources</option>
+                            <option value="4" <?= $employee_detail->department_id == 4 ? 'selected' : '' ?>>Finance</option>
+                            <option value="5" <?= $employee_detail->department_id == 5 ? 'selected' : '' ?>>Sales</option>
+                            <option value="6" <?= $employee_detail->department_id == 6 ? 'selected' : '' ?>>Operations</option>
+                        </select>
                     </div>
 
                     <div class="detail-item">
@@ -172,16 +181,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             <!-- Action Buttons -->
             
                 <div class="employee-actions">
+                    <a href="employees.php" class="btn btn-primary">Back</a>
                     <button id="editBtn" class="btn btn-primary">✏️ Edit Employee</button>
                     <button type="submit" id="updateBtn" name="action" value="update" class="btn btn-success" style="display:none;">💾 Update</button>
                     <button id="cancelBtn" class="btn btn-secondary" style="display:none;">❌ Cancel</button>
-
                     <?php if ($employee_detail->is_terminated == 0): ?>
-                        <button type="submit" name="action" value="deactivate" class="btn btn-warning">🚫 Deactivate</button>
+                        <button type="submit" name="action" value="terminate" class="btn btn-warning">🚫 Terminate</button>
                     <?php else: ?>
                         <button type="submit" name="action" value="activate" class="btn btn-success">✅ Activate</button>
                     <?php endif; ?>
-
                     <button type="submit" name="action" value="delete" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this employee?')">🗑️ Delete</button>
                     <input type="hidden" name="employee_id" value="<?= escape($employee_detail->id) ?>">
                 </div>

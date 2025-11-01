@@ -2,7 +2,7 @@
 require_once('Employee.php');
 require_once('Department.php');
 $employeeObj = new Employee();
-$employees = $employeeObj->getEmployeeByRole(3);
+$employees = $employeeObj->getEmployeesWithDepartment();
 $departmentObj = new Department();
 $departments = $departmentObj->getAllDepartments();
 ?>
@@ -46,7 +46,7 @@ $departments = $departmentObj->getAllDepartments();
                             <div class="employee-details">
                             <div class="employee-detail">
                                 <span>Department:</span>
-                                <span><?php escape($employee->department_id)  ?></span>
+                                <span><?php escape($employee->department_name)  ?></span>
                             </div>
                             <div class="employee-detail">
                                 <span>Email:</span>
@@ -58,9 +58,15 @@ $departments = $departmentObj->getAllDepartments();
                             </div>
                             <div class="employee-detail">
                                 <span>Status:</span>
-                                <span class="employee-status <?= escape($employee->employment_status) ?>">
-                                    <?= escape(ucwords(str_replace('_', ' ', $employee->employment_status))) ?>
-                                </span>
+                                <?php if($employee->is_terminated): ?>
+                                    <span class="employee-status terminate">
+                                        <?= "Terminated" ?>
+                                    </span>
+                                <?php else: ?>
+                                    <span class="employee-status <?= escape($employee->employment_status) ?>">
+                                        <?= escape(ucwords(str_replace('_', ' ', $employee->employment_status))) ?>
+                                    </span>
+                                <?php endif; ?>
                             </div>
                             </div>
                         </a>

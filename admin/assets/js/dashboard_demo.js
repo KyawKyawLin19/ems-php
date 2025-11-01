@@ -467,7 +467,7 @@ function setupEmployeeDetailModal() {
 
   // Setup action buttons
   const editBtn = document.getElementById("editEmployeeBtn")
-  const deactivateBtn = document.getElementById("deactivateEmployeeBtn")
+  const terminateBtn = document.getElementById("terminateEmployeeBtn")
   const deleteBtn = document.getElementById("deleteEmployeeBtn")
 
   editBtn.addEventListener("click", () => {
@@ -475,9 +475,9 @@ function setupEmployeeDetailModal() {
     showNotification("Edit functionality coming soon!", "info")
   })
 
-  deactivateBtn.addEventListener("click", () => {
-    // TODO: Implement deactivate functionality
-    showNotification("Deactivate functionality coming soon!", "info")
+  terminateBtn.addEventListener("click", () => {
+    // TODO: Implement terminate functionality
+    showNotification("Terminate functionality coming soon!", "info")
   })
 
   deleteBtn.addEventListener("click", () => {

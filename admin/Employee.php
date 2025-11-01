@@ -13,20 +13,20 @@ class Employee
         }
     }
 
-    public function getAllEmployees()
-    {
-        $pdo = $this->getPDO();
-        $stmt = $pdo->query("SELECT * FROM employees WHERE is_terminated = 0 AND is_deleted = 0");
-        return $stmt->fetchAll();
-    }
+    // public function getAllEmployees()
+    // {
+    //     $pdo = $this->getPDO();
+    //     $stmt = $pdo->query("SELECT * FROM employees WHERE is_terminated = 0 AND is_deleted = 0");
+    //     return $stmt->fetchAll();
+    // }
 
-    public function getEmployeeByRole($id)
-    {
-        $pdo = $this->getPDO();
-        $stmt = $pdo->prepare("SELECT * FROM employees WHERE role_id = :role_id AND  is_terminated = 0 AND is_deleted = 0");
-        $stmt->execute(['role_id' => $id]);
-        return $stmt->fetchAll();
-    }
+    // public function getEmployeeByRole($id)
+    // {
+    //     $pdo = $this->getPDO();
+    //     $stmt = $pdo->prepare("SELECT * FROM employees WHERE role_id = :role_id AND  is_terminated = 0 AND is_deleted = 0");
+    //     $stmt->execute(['role_id' => $id]);
+    //     return $stmt->fetchAll();
+    // }
 
     public function getEmployeeById($id)
     {
@@ -36,8 +36,8 @@ class Employee
         return $stmt->fetch();
     }
 
-    // Soft delete (Deactivate employee)
-    public function deactivateEmployee($id)
+    // Soft delete (Terminate employee)
+    public function terminateEmployee($id)
     {
         $pdo = $this->getPDO();
         $stmt = $pdo->prepare("UPDATE employees 
@@ -128,6 +128,28 @@ class Employee
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM employees WHERE email = :email");
         $stmt->execute(['email' => $email]);
         return $stmt->fetchColumn() > 0;
+    }
+
+    public function getDepartmentName($department_id)
+    {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT name FROM departments WHERE id = :department_id");
+        $stmt->execute(['department_id' => $department_id]);
+        $result = $stmt->fetch();
+        return $result ? $result->name : null;
+    }
+
+    public function getEmployeesWithDepartment()
+    {
+        $pdo = $this->getPDO();
+        $sql = "SELECT e.*, d.name AS department_name
+                FROM employees e
+                LEFT JOIN departments d ON e.department_id = d.id
+                WHERE e.role_id = 3
+                AND e.is_deleted = 0";
+
+        $stmt = $pdo->query($sql);
+        return $stmt->fetchAll();
     }
 
 }
