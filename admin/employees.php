@@ -1,6 +1,7 @@
 <?php
 require_once('Employee.php');
 require_once('Department.php');
+require_once('Department.php');
 $employeeObj = new Employee();
 $employees = $employeeObj->getEmployeesWithDepartment();
 $departmentObj = new Department();
@@ -17,6 +18,21 @@ $departments = $departmentObj->getAllDepartments();
                     Add Employee
                 </a>
             </div>
+
+            <?php if($employees): ?>
+                <div class="employee-filters">
+                    <input type="text" placeholder="Search employees..." class="search-input" id="employeeSearch">
+                    <select class="filter-select" id="departmentFilter">
+                        <option value="1">All Departments</option>
+                        <option value="2">Human Resources</option>
+                        <option value="3">Information Technology</option>
+                        <option value="4">Finance</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="sales">Sales</option>
+                        <option value="operations">Operations</option>
+                    </select>
+                </div>
+                <div class="employee-grid" id="employeeGrid">
 
             <?php if($employees): ?>
                 <div class="employee-filters">
@@ -105,3 +121,4 @@ $departments = $departmentObj->getAllDepartments();
     </main>
 </div>
 <?php require_once('layouts/footer.php') ?>
+

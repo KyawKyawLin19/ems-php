@@ -475,9 +475,9 @@ function setupEmployeeDetailModal() {
     showNotification("Edit functionality coming soon!", "info")
   })
 
-  deactivateBtn.addEventListener("click", () => {
-    // TODO: Implement deactivate functionality
-    showNotification("Deactivate functionality coming soon!", "info")
+  terminateBtn.addEventListener("click", () => {
+    // TODO: Implement terminate functionality
+    showNotification("Terminate functionality coming soon!", "info")
   })
 
   deleteBtn.addEventListener("click", () => {
