@@ -1,3 +1,11 @@
+<?php
+
+require_once('Department.php');
+$departmentObj = new Department();
+$departments = $departmentObj->getAllDepartments();
+
+?>
+
 <?php require_once('layouts/master.php') ?>
 <?php require_once('layouts/sidebar.php') ?>
 
@@ -11,33 +19,21 @@
                 </a>
             </div>
             <div class="departments-grid">
-                <div class="department-card">
-                    <div class="department-icon">💻</div>
-                    <h3>Information Technology</h3>
-                    <p>15 employees</p>
-                    <div class="department-stats">
-                        <span>Budget: $250,000</span>
-                        <span>Head: John Smith</span>
-                    </div>
-                </div>
-                <div class="department-card">
-                    <div class="department-icon">👥</div>
-                    <h3>Human Resources</h3>
-                    <p>8 employees</p>
-                    <div class="department-stats">
-                        <span>Budget: $180,000</span>
-                        <span>Head: Sarah Wilson</span>
-                    </div>
-                </div>
-                <div class="department-card">
-                    <div class="department-icon">📊</div>
-                    <h3>Marketing</h3>
-                    <p>12 employees</p>
-                    <div class="department-stats">
-                        <span>Budget: $200,000</span>
-                        <span>Head: Mike Johnson</span>
-                    </div>
-                </div>
+                <?php if($departments): ?>
+                    <?php foreach ($departments as $department): ?>
+                        <div class="department-card">
+                            <div class="department-icon"><?= $department->icon?></div>
+                            <h3><?= $department->name ?></h3>
+                            <p>15 employees</p>
+                            <div class="department-stats">
+                                <span>Status: <span class="status <?= strtolower(trim($department->status)) ?>"><?= $department->status ?></span></span>
+                                <span>Head ID: <?= $department->leader_id ?></span>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>No departments found.</p>
+                <?php endif; ?>
             </div>
         </section>
     </main>

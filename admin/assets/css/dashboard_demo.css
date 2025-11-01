@@ -177,7 +177,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(229, 231, 235, 0.3);
 }
@@ -242,7 +242,7 @@ body {
 
 /* Content Sections */
 .content-section {
-  display: block;
+  display: none;
 }
 
 .content-section.active {
@@ -459,6 +459,7 @@ body {
   border: 1px solid rgba(229, 231, 235, 0.3);
   transition: transform 0.2s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .employee-card:hover {
@@ -520,7 +521,7 @@ body {
 
 /* Employee Detail Modal Styles */
 .employee-detail-content {
-  max-width: 800px;
+  max-width: 100%;
   width: 95%;
 }
 
@@ -4316,8 +4317,4 @@ body {
 .leave-table .table-row span {
   color: #6b7280;
   font-size: 0.9rem;
-}
-
-a{
-  text-decoration: none;
 }
