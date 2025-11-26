@@ -1,8 +1,10 @@
 <?php
 
 require_once('Department.php');
+require_once("Employee.php");
 $departmentObj = new Department();
 $departments = $departmentObj->getAllDepartments();
+$employeeObj = new Employee();
 
 ?>
 
@@ -21,10 +23,13 @@ $departments = $departmentObj->getAllDepartments();
             <div class="departments-grid">
                 <?php if($departments): ?>
                     <?php foreach ($departments as $department): ?>
+                        <?php $employees = $employeeObj->getEmployeeByDepartment($department->id);
+                              $employee_count = count($employees); ?>
+                        <a  href="department_details.php?id=<?= escape($department->id)?>" class="employee-card"  data-department="it">
                         <div class="department-card">
                             <div class="department-icon"><?= $department->icon?></div>
                             <h3><?= $department->name ?></h3>
-                            <p>15 employees</p>
+                            <p><?= $employee_count?> employees</p>
                             <div class="department-stats">
                                 <span>Status: <span class="status <?= strtolower(trim($department->status)) ?>"><?= $department->status ?></span></span>
                                 <span>Head ID: <?= $department->leader_id ?></span>

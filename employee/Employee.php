@@ -13,19 +13,39 @@ Class Employee{
 
     public function check_login($email,$password){
         $pdo = $this->getPDO();
-        $stmt = $pdo->prepare("SELECT `email`,`password` FROM employees 
-                               WHERE email = :email AND password = :password ");
+        $stmt = $pdo->prepare("SELECT * FROM employees 
+                               WHERE email = :email AND password_hash = :password_hash ");
         $stmt->execute([':email' => $email,
-                        ':password' => $password]);
+                        ':password_hash' => $password]);
         $result = $stmt->fetch(PDO::FETCH_OBJ);
-        //die(var_dump($password == $result->password));
-        if($result){
-            //die(var_dump($password));
-            if ($email == $result->email && $password == $result->password){
-                echo "<script>alert(successfully login);window.location.href='index.html';</script>";
+        
+        //die(var_dump($result));
+
+        //die(var_dump($result->email == $email , $result->password == $password));
+        if ($result) {
+            if ($result->email == $email && $result->password_hash == $password) {
+                return $result;
+    
+            } else {
+                return false;
             }
         }
-        //die(var_dump($result));
+    }
+    
+    public function getEmployeeById($id)
+    {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM employees WHERE id = :id ");
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch();
+    }
+
+    public function getRoleNames($id){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT role_name from roles where id=:id");
+        $stmt->execute([':id' => $id]);
+        $role_name = $stmt->fetch();
+        return $role_name[0];
     }
 }
 ?>

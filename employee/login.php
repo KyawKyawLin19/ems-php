@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("Employee.php");
 
 if($_POST){
@@ -7,9 +7,17 @@ if($_POST){
     $password = $_POST['password'];
 
     $employeeObj = new Employee();
-    $check_login = $employeeObj->check_login($email,$password);
-    if ($check_login) {
-       echo "<script>alert(successfully login);window.location.href='index.html';</script>";
+    $result = $employeeObj->check_login($email,$password);
+    //die(var_dump($result));
+    if ($result) {
+       $_SESSION['user_id'] = $result->id;
+       $_SESSION['username'] = $result->name;
+       $_SESSION['email'] = $result->email;
+       $_SESSION['role'] = $result->role_id;
+       header("Location: index.php");
+       exit;
+    }else {
+        echo "<script>alert('Invalid email or password');</script>";
     }
 }
 

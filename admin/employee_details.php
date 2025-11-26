@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     if (!$employee_id || !$action) die('Invalid request.');
 
     if ( $action === 'update'){
+        die(var_dump($_POST));
         $data = [
             'name' => $_POST['name'],
             'email' => $_POST['email'],
@@ -141,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                     <div class="detail-item">
                         <span class="detail-label">Employee Code:</span>
                         <span class="detail-value editable-text"><?= escape($employee_detail->employee_code) ?></span>
-                        <input type="text" name="employee_code" value="<?= escape($employee_detail->employee_code) ?>" class="editable-input" style="display:none;">
+                        <span type="text" name="employee_code" value="<?= escape($employee_detail->employee_code) ?>" class="editable-input" style="display:none;"></span>
                     </div>
 
                     <div class="detail-item">
@@ -161,7 +162,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                     <div class="detail-item">
                         <span class="detail-label">Role:</span>
                         <span class="detail-value editable-text"><?= escape($getRoleName) ?></span>
-                        <input type="text" name="role_id" value="<?= escape($employee_detail->role_id) ?>" class="editable-input" style="display:none;">
+                        <select id="empDepartment" name="role_id" class="editable-input" style="display:none;" required>
+                            
+                            <option value="2" <?= $employee_detail->role_id == 2 ? 'selected' : '' ?>>HR</option>
+                            <option value="3" <?= $employee_detail->role_id == 3 ? 'selected' : '' ?>>Employee</option>
+                        </select>
                     </div>
 
                     <div class="detail-item">

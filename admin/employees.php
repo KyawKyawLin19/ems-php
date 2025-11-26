@@ -1,11 +1,37 @@
 <?php
 require_once('Employee.php');
-require_once('Department.php');
-require_once('Department.php');
+
 $employeeObj = new Employee();
-$employees = $employeeObj->getEmployeesWithDepartment();
-$departmentObj = new Department();
-$departments = $departmentObj->getAllDepartments();
+$employees = $employeeObj->getAllEmployees();
+
+if(!empty($_GET['pageno'])){
+    $pageno = $_GET['pageno'];
+}else{
+    $pageno =1;
+}
+$no_offrecs = 4;
+$offset = ($pageno-1)* $no_offrecs;
+
+$emp_name = $_GET['employee_name'] ?? null;
+$dep_name = $_GET['department_name'] ?? null;
+
+// die(var_dump($dep_name));
+
+// if($dep_name != null && $emp_name != null){
+//     $filter_pagination = $employeeObj->two_filter_pagination($offset, $no_offrecs,$dep_name,$emp_name);
+//     $employee_filter = $employeeObj->filter_employee($dep_name,$emp_name);
+//     $total_pages = ceil(count($employee_filter) / $no_offrecs);
+// }elseif($dep_name != 'all_departments' || $emp_name != null){
+//     $filter_pagination = $employeeObj->one_filter_pagination($offset, $no_offrecs,$dep_name,$emp_name);
+//     $employee_filter = $employeeObj->filter_employee($dep_name,$emp_name);
+//     $total_pages = ceil(count($employee_filter) / $no_offrecs);
+// }else{
+//     $filter_pagination = $employeeObj->pagination_employee($offset, $no_offrecs);
+//     $total_pages = ceil(count($employees) / $no_offrecs);
+// }
+
+$filter_pagination= $employeeObj->filter_pagination($offset, $no_offrecs)
+
 ?>
 <?php require_once('layouts/master.php') ?>
 <?php require_once('layouts/sidebar.php') ?>
@@ -19,38 +45,27 @@ $departments = $departmentObj->getAllDepartments();
                 </a>
             </div>
 
-            <?php if($employees): ?>
-                <div class="employee-filters">
-                    <input type="text" placeholder="Search employees..." class="search-input" id="employeeSearch">
-                    <select class="filter-select" id="departmentFilter">
-                        <option value="1">All Departments</option>
-                        <option value="2">Human Resources</option>
-                        <option value="3">Information Technology</option>
-                        <option value="4">Finance</option>
-                        <option value="marketing">Marketing</option>
-                        <option value="sales">Sales</option>
-                        <option value="operations">Operations</option>
-                    </select>
-                </div>
-                <div class="employee-grid" id="employeeGrid">
+            
 
             <?php if($employees): ?>
+                <form method="GET" action="" >
                 <div class="employee-filters">
-                    <input type="text" placeholder="Search employees..." class="search-input" id="employeeSearch">
-                    <select class="filter-select" id="departmentFilter">
-                        <option value="1">All Departments</option>
-                        <option value="2">Human Resources</option>
-                        <option value="3">Information Technology</option>
-                        <option value="4">Finance</option>
-                        <option value="marketing">Marketing</option>
-                        <option value="sales">Sales</option>
-                        <option value="operations">Operations</option>
+                    <input type="text" placeholder="Search employees..." class="search-input" id="employeeSearch" name="employee_name">
+                    <select class="filter-select" id="departmentFilter" name="department_name" onchange="this.form.submit()">
+                        <option value="all" <?=  $dep_name == null ? 'selected' : ''?>>All Departments</option>
+                        <option value=1 <?=  $dep_name =='1' ? 'selected' : ''?>>Information Technology</option>
+                        <option value=2 <?=  $dep_name =='2' ? 'selected' : ''?>>Marketing</option>
+                        <option value=3 <?=  $dep_name =='3' ? 'selected' : ''?>>Human Resources</option>
+                        <option value=4 <?=  $dep_name =='4' ? 'selected' : ''?>>Finance</option>
+                        <option value=5 <?=  $dep_name =='5' ? 'selected' : ''?>>Sales</option>
+                        <option value=6 <?=  $dep_name =='6' ? 'selected' : ''?>>Operations</option>
                     </select>
                 </div>
+                </form>
                 <div class="employee-grid" id="employeeGrid">
                     <!-- Employee cards will be populated by JavaScript  -->
                 
-                    <?php foreach ($employees as $employee): ?>
+                    <?php foreach ($filter_pagination as $employee): ?>
                         <a  href="employee_details.php?id=<?= escape($employee->id)?>" class="employee-card"  data-department="it">
                             <div class="employee-header">
                             <div class="employee-avatar">MC</div>
@@ -61,8 +76,8 @@ $departments = $departmentObj->getAllDepartments();
                             </div>
                             <div class="employee-details">
                             <div class="employee-detail">
-                                <span>Department:</span>
-                                <span><?php escape($employee->department_name)  ?></span>
+                                <?php $department_name = $employeeObj->getDepartmentName($employee->department_id); ?><span>Department:</span>
+                                <span><?php escape($department_name)  ?></span>
                             </div>
                             <div class="employee-detail">
                                 <span>Email:</span>
@@ -92,25 +107,34 @@ $departments = $departmentObj->getAllDepartments();
                     <!-- Added pagination section at bottom of employee section -->
                 <div class="pagination-container" id="paginationContainer">
                     <div class="pagination-info">
-                        <span id="paginationInfo">Showing 1-6 of 12 employees</span>
+                        <span id="paginationInfo">Showing 1-4 of 12 employees</span>
                     </div>
                     <div class="pagination-controls">
                         <button class="pagination-btn" id="prevBtn" disabled>
-                            <span>?</span>
-                            Previous
+                            <?php if($pageno <= 1) ?>
+                                <a style="text-decoration: none;" href="<?php echo ($pageno <= 1) ? '#' : '?pageno=' . ($pageno - 1) ; ?>">←Previous</a>
                         </button>
+
+                        <?php 
+                    if ($pageno <= 2) {
+                        $start = 1;
+                        $end = min(3, $total_pages);
+                    } elseif ($pageno <= $total_pages - 1) {
+                        $start = $pageno - 1;
+                        $end = $pageno + 1;
+                    } else {
+                        $start = max(1, $total_pages - 2);
+                        $end = $total_pages;
+                    }
+
+                    for ($i = $start; $i <= $end; $i++): ?>
                         <div class="pagination-numbers pagination-btn" id="paginationNumbers">
-                                <span>1</span>
+                            <a href="?pageno=<?= $i ?>"><?= $i ?></a>
                         </div>
-                        <div class="pagination-numbers pagination-btn" id="paginationNumbers">
-                                <span>2</span>
-                        </div>
-                        <div class="pagination-numbers pagination-btn" id="paginationNumbers">
-                                <span>3</span>
-                        </div>
+                    <?php endfor; ?>
                         <button class="pagination-btn" id="nextBtn">
-                            Next
-                            <span>?</span>
+                            <?php if($pageno == $total_pages) ?>
+                               <a style="text-decoration: none;" href="<?php echo ($pageno < 1) ? '#' : '?pageno=' . ($pageno + 1); ?>">Next→</a>
                         </button>
                     </div>
                 </div>

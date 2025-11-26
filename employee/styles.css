@@ -826,6 +826,24 @@ body {
     gap: 1.5rem;
 }
 
+/* Request Leave Section */
+.msg {
+    color: #790846ff ;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.err {
+    color: #790846ff;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
 /* Holidays */
 .holidays-list {
     display: flex;
@@ -1369,4 +1387,7 @@ body {
         width: 100%;
         justify-content: center;
     }
+
+    
+
 }

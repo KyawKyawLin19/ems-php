@@ -4,7 +4,7 @@ class Role
     private function getPDO()
     {
         try {
-            $pdo = new PDO("mysql:dbname=ems_db;host=localhost",'root','EBP!23ebp');
+            $pdo = new PDO("mysql:dbname=ems_db;host=localhost",'root','myatthinzar1259');
             $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             return $pdo;
         } catch (PDOException $e) {

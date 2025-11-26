@@ -4,7 +4,7 @@ class Employee
     private function getPDO()
     {
         try {
-            $pdo = new PDO("mysql:dbname=ems_db;host=localhost",'root','EBP!23ebp');
+            $pdo = new PDO("mysql:dbname=ems_db;host=localhost",'root','myatthinzar1259');
             $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
             return $pdo;
@@ -13,12 +13,12 @@ class Employee
         }
     }
 
-    // public function getAllEmployees()
-    // {
-    //     $pdo = $this->getPDO();
-    //     $stmt = $pdo->query("SELECT * FROM employees WHERE is_terminated = 0 AND is_deleted = 0");
-    //     return $stmt->fetchAll();
-    // }
+    public function getAllEmployees()
+    {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->query("SELECT * FROM employees");
+        return $stmt->fetchAll();
+    }
 
     // public function getEmployeeByRole($id)
     // {
@@ -35,6 +35,8 @@ class Employee
         $stmt->execute(['id' => $id]);
         return $stmt->fetch();
     }
+
+    
 
     // Soft delete (Terminate employee)
     public function terminateEmployee($id)
@@ -139,6 +141,13 @@ class Employee
         return $result ? $result->name : null;
     }
 
+    public function getEmployeeByDepartment($department_id) {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM employees WHERE department_id = :department_id ");
+        $stmt->execute(['department_id' => $department_id]);
+        return $stmt->fetchAll();
+    }
+
     public function getEmployeesWithDepartment()
     {
         $pdo = $this->getPDO();
@@ -150,6 +159,58 @@ class Employee
 
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll();
+    }
+
+    // public function two_filter_pagination($offset, $no_offrecs,$dep_name,$emp_name=null){
+    //     $pdo = $this->getPDO();
+    //     $sql = "SELECT * FROM employees WHERE department_id = :department_id 
+    //                            AND name = :name LIMIT $offset, $no_offrecs"
+    //     $stmt = $pdo->prepare("SELECT * FROM employees WHERE department_id = :department_id 
+    //                            AND name = :name LIMIT $offset, $no_offrecs");
+    //     $stmt->execute([
+    //         ':department_id' => $dep_name,
+    //         ':name' => $emp_name]);
+    //     return $stmt->fetchAll();
+    // }
+
+    public function one_filter_pagination($offset, $no_offrecs,$dep_name=null,$emp_name=null){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM employees WHERE department_id = :department_id 
+                               OR name = :name LIMIT $offset, $no_offrecs");
+        $stmt->execute([
+            ':department_id' => $dep_name,
+            ':name' => $emp_name]);
+        return $stmt->fetchAll();
+    }
+
+    public function pagination_employee($offset, $no_offrecs){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM employees LIMIT $offset, $no_offrecs");
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function filter_employee($dep_name=null,$emp_name=null){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM employees WHERE department_id = :department_id 
+                               OR name = :name");
+        $stmt->execute([
+            ':department_id' => $dep_name,
+            ':name' => $emp_name]);
+        return $stmt->fetchAll();
+    }
+
+    public function filter_pagination($offset, $no_offrecs,$dep_name="",$emp_name=""){
+        $pdo = $this->getPDO();
+        $sql = "SELECT * FROM employees WHERE 1=1";
+
+        $sql .= "LIMIT :offset,:no_offrecs";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(":offset",(int)$offset, PDO::PARAM_INT);
+        $stmt->bindValue(":no_offrecs",(int)$no_offrecs, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll();
+
     }
 
 }

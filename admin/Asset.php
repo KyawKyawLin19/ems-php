@@ -90,7 +90,8 @@ Class Asset{
 
     public function filter_pagination($offset, $no_offrecs,$asset_type='all_types',$asset_name=null){
         $pdo = $this->getPDO();
-        $stmt = $pdo->prepare("SELECT * FROM assets WHERE asset_type = :asset_type OR assets_name = :assets_name LIMIT $offset, $no_offrecs");
+        $stmt = $pdo->prepare("SELECT * FROM assets WHERE asset_type = :asset_type 
+                               OR assets_name = :assets_name LIMIT $offset, $no_offrecs");
         $stmt->execute([
             ':asset_type' => $asset_type,
             ':assets_name' => $asset_name]);

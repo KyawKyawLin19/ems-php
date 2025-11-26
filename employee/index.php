@@ -1,3 +1,87 @@
+<?php
+session_start();
+require_once('Employee.php');
+
+require '../vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// ------------------- CONFIG -------------------
+$SMTP_HOST      = 'smtp.gmail.com';
+$SMTP_USER      = 'dreamhr8299@gmail.com';
+$SMTP_PASS      = 'lcntrzelmuhhvfjo';
+$SMTP_PORT      = 587;
+$FROM_NAME      = 'Request Leave Form';
+$TO_EMAIL       = 'dreamhr8299@gmail.com';
+$TO_NAME        = 'dreamhr_admin';
+// ---------------------------------------------
+$errors = [];
+$success = false;
+$leave_type = $_POST['leave_type'] ?? '';
+//die(var_dump($_POST));
+
+if (!isset($_SESSION['email'])) {
+    header("Location: login.php");
+    exit;
+}
+$email = $_SESSION['email'];
+$user_id = $_SESSION['user_id'];
+$username = $_SESSION['username'];
+$role = $_SESSION['role'];
+
+$employeeObj = new Employee();
+$employee = $employeeObj->getEmployeeById($user_id);
+$get_role_name = $employeeObj->getRoleNames($role);
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+    
+    $leave_start = $_POST['leave_start'] ?? '';
+    $leave_end = $_POST['leave_end'] ?? '';
+    $leave_reason = trim($_POST['leave_reason']) ?? '';
+    $name         = $username;//'Myat Thinzar'; 
+    $email        = $email;//'parkhyunee1259@gmail.com';
+    
+
+    if ($leave_type === '')    $errors[] = 'Leave Type is required.Please Choice!';
+    if ($leave_start === '')    $errors[] = 'Start date is required.Please Choice!';
+    if ($leave_end === '')    $errors[] = 'End date is required.Please Choice!';
+    if ($leave_reason === '')    $errors[] = 'Leave Reason is require!';
+    
+    if (empty($errors)) {
+        $mail = new PHPMailer(true);
+        try {
+            // SMTP settings
+            $mail->isSMTP();
+            $mail->Host       = $SMTP_HOST;
+            $mail->SMTPAuth   = true;
+            $mail->Username   = $SMTP_USER;
+            $mail->Password   = $SMTP_PASS;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = $SMTP_PORT;
+
+            // Recipients
+            $mail->setFrom($SMTP_USER, $FROM_NAME);
+            $mail->addAddress($TO_EMAIL, $TO_NAME);
+            $mail->addReplyTo($email, $name);
+
+            // Content
+            $mail->isHTML(false);
+            $mail->Subject = "Request Leave Form: $name";
+            $mail->Body    = "Leave Request Details:\n\nType: $leave_type\nStart Date: $leave_start\nEnd Date: $leave_end\nReason: $leave_reason";
+
+            $mail->send();
+            $success = true;
+        } catch (Exception $e) {
+            $errors[] = "Mail could not be sent. Error: {$mail->ErrorInfo}";
+        }
+    }
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +148,7 @@
             <header class="header">
                 <h1 id="page-title">Dashboard</h1>
                 <div class="user-info">
-                    <span>Sarah Johnson</span>
+                    <span><?= $employee['name'] ?></span>
                     <div class="avatar">SJ</div>
                 </div>
             </header>
@@ -169,8 +253,8 @@
                                     <img id="profile-photo-display" src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=d4f4dd&color=2d5f3f&size=120" alt="Profile Photo">
                                 </div>
                                 <div class="profile-basic-info">
-                                    <h2>Sarah Johnson</h2>
-                                    <p>Senior Software Engineer</p>
+                                    <h2><?= $employee['name'] ?></h2>
+                                    <p><?= $get_role_name ?></p>
                                     <p>Engineering Department</p>
                                     <p>Employee ID: EMP-2024-001</p>
                                 </div>
@@ -185,19 +269,19 @@
                                     <div class="info-grid">
                                         <div class="info-item">
                                             <label>Email</label>
-                                            <p>sarah.johnson@company.com</p>
+                                            <p><?= $employee['email'] ?></p>
                                         </div>
                                         <div class="info-item">
                                             <label>Phone</label>
-                                            <p id="display-phone">+1 (555) 123-4567</p>
+                                            <p id="display-phone"><?= $employee['phone'] ?></p>
                                         </div>
                                         <div class="info-item">
                                             <label>Date of Birth</label>
-                                            <p id="display-dob">March 15, 1990</p>
+                                            <p id="display-dob"><?= $employee['date_of_birth'] ?></p>
                                         </div>
                                         <div class="info-item">
                                             <label>Address</label>
-                                            <p>123 Main Street, San Francisco, CA 94102</p>
+                                            <p><?= $employee['address'] ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -206,8 +290,8 @@
                                     <h3>Employment Details</h3>
                                     <div class="info-grid">
                                         <div class="info-item">
-                                            <label>Join Date</label>
-                                            <p>January 15, 2020</p>
+                                            <label>Hire Date</label>
+                                            <p><?= $employee['hire_date'] ?></p>
                                         </div>
                                         <div class="info-item">
                                             <label>Employment Type</label>
@@ -229,15 +313,15 @@
                                     <div class="info-grid">
                                         <div class="info-item">
                                             <label>Contact Name</label>
-                                            <p id="display-emergency-name">John Johnson</p>
+                                            <p id="display-emergency-name"><?= $employee['emergency_contact'] ?></p>
                                         </div>
                                         <div class="info-item">
                                             <label>Relationship</label>
                                             <p id="display-emergency-relation">Spouse</p>
                                         </div>
                                         <div class="info-item">
-                                            <label>Phone Number</label>
-                                            <p id="display-emergency-phone">+1 (555) 987-6543</p>
+                                            <label>Address</label>
+                                            <p id="display-emergency-phone"><?= $employee['emergency_address'] ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -717,30 +801,38 @@
                 <!-- Leave Request Form -->
                 <div class="card">
                     <h3>Request Leave</h3>
-                    <form class="leave-form">
+
+                    <?php if ($success): ?>
+                        <p class="msg">Successfully Sent Request Leave!</p>
+                    <?php endif; ?>
+
+                    <?php foreach ($errors as $e): ?>
+                        <p class="err"><?= htmlspecialchars($e) ?></p>
+                    <?php endforeach; ?>
+                    <form method="POST" action="" class="leave-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="leave-type">Leave Type</label>
-                                <select id="leave-type" required>
+                                <select id="leave-type" name="leave_type" >
                                     <option value="">Select leave type</option>
-                                    <option value="annual">Annual Leave</option>
-                                    <option value="sick">Sick Leave</option>
-                                    <option value="personal">Personal Leave</option>
-                                    <option value="emergency">Emergency Leave</option>
+                                    <option value="annual" <?=  $leave_type =='annual' ? 'selected' : '' ?>>Annual Leave</option>
+                                    <option value="sick" <?=  $leave_type =='sick' ? 'selected' : '' ?>>Sick Leave</option>
+                                    <option value="personal" <?=  $leave_type =='personal' ? 'selected' : '' ?>>Personal Leave</option>
+                                    <option value="emergency" <?=  $leave_type =='emergency' ? 'selected' : '' ?>>Emergency Leave</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="leave-start">Start Date</label>
-                                <input type="date" id="leave-start" required>
+                                <input type="date" id="leave-start" name="leave_start" value="<?= htmlspecialchars($leave_start ?? '') ?>">
                             </div>
                             <div class="form-group">
                                 <label for="leave-end">End Date</label>
-                                <input type="date" id="leave-end" required>
+                                <input type="date" id="leave-end" name="leave_end" value="<?= htmlspecialchars($leave_end ?? '') ?>" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="leave-reason">Reason</label>
-                            <textarea id="leave-reason" rows="4" placeholder="Please provide a reason for your leave request..." required></textarea>
+                            <textarea id="leave-reason" name="leave_reason" rows="4" placeholder="Please provide a reason for your leave request..." ><?= htmlspecialchars($leave_reason ?? '') ?></textarea>
                         </div>
                         <button type="submit" class="btn-primary">Submit Request</button>
                     </form>
@@ -942,6 +1034,7 @@
                     </div>
                 </div>
             </section>
+
         </main>
     </div>
     <!-- Custom Confirm Modal -->

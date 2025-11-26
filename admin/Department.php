@@ -5,7 +5,7 @@ class Department
     private function getPDO()
     {
         try {
-            $pdo = new PDO("mysql:dbname=ems_db;host=localhost",'root','EBP!23ebp');
+            $pdo = new PDO("mysql:dbname=ems_db;host=localhost",'root','myatthinzar1259');
             $pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
             return $pdo;
@@ -20,6 +20,14 @@ class Department
         $stmt = $pdo->query("SELECT * FROM departments");
         $departments = $stmt->fetchAll();
         return $departments;
+    }
+
+    public function getDepartmentById($id)
+    {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("SELECT * FROM departments WHERE id = :id ");
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch();
     }
 
     public function addDepartment($data)
@@ -40,5 +48,26 @@ class Department
             ':created_at'  => date('Y-m-d H:i:s'),
             ':updated_at'  => date('Y-m-d H:i:s')
         ]);
+    }
+
+    public function updateDepartment($id, $name, $status, $leader_id){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("UPDATE departments 
+        SET name = :name,
+            status = :status,
+            leader_id = :leader_id
+        WHERE id = :id ");
+        return $stmt->execute([
+        'name'      => $name,
+        'status'    => $status,
+        'leader_id' => $leader_id,
+        'id'        => $id
+        ]);
+    }
+
+    public function deleteDepartment($id){
+        $pdo = $this->getPDO();
+        $stmt = $pdo->prepare("DELETE FROM departments WHERE id = :id");
+        $stmt->execute(['id' => $id]);
     }
 }

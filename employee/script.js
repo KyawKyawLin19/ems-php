@@ -270,8 +270,8 @@ document.getElementById('message-input').addEventListener('keypress', function(e
 });
 
 // Leave form submission
-document.querySelector('.leave-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('✓ Leave request submitted successfully! Your manager will review it shortly.');
-    this.reset();
-});
+// document.querySelector('.leave-form').addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     alert('✓ Leave request submitted successfully! Your manager will review it shortly.');
+//     this.reset();
+// });

@@ -4323,3 +4323,85 @@ body {
   color: #6b7280;
   font-size: 0.9rem;
 }
+
+/* department detail */
+.department-details-container {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.department-info {
+    display: flex;
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+.info-icon {
+    font-size: 50px;
+    margin-right: 25px;
+}
+
+.details-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.members-section {
+    margin-bottom: 30px;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.member-avatar {
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+.status.active {
+    color: green;
+    font-weight: bold;
+}
+
+.status.inactive {
+    color: red;
+    font-weight: bold;
+}
